@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:read_book_app/comment_screen.dart';
+import 'package:read_book_app/common/button.dart';
+
+import 'comment_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CommentScreen(),
+      home: const Button(),
     );
   }
 }
