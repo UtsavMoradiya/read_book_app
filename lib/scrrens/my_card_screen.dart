@@ -31,7 +31,7 @@ class _MyCardScreenState extends State<MyCardScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Image.asset("assets/images/back.png"),
-                      const Text(
+                       Text(
                         "My Card",
                         style: TextStyle(
                           fontSize: 17,
