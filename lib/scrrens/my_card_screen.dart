@@ -42,7 +42,7 @@ class _MyCardScreenState extends State<MyCardScreen> {
                         height: height / 28,
                         width: width / 10,
                         decoration: BoxDecoration(
-                        color:  Color(0xFF2EBBC3),
+                        color: const Color(0xFF2EBBC3),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: const Icon(Icons.add,color: Colors.white),
