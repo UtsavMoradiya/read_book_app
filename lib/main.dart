@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:read_book_app/common/button.dart';
+import 'package:read_book_app/scrrens/add_a_new_card_screen.dart';
 import 'package:read_book_app/scrrens/my_card_screen.dart';
 
 import 'comment_screen.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyCardScreen(),
+      home: const AddANewCardScreen(),
     );
   }
 }

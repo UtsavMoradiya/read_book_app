@@ -26,7 +26,7 @@ class _MyCardScreenState extends State<MyCardScreen> {
               children: [
                 SizedBox(height: height / 25),
                 Padding(
-                  padding:  EdgeInsets.only(left: width / 28, right: width / 28),
+                  padding:  EdgeInsets.only(left: width / 30, right: width / 30),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
