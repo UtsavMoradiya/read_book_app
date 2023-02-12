@@ -6,17 +6,15 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ElevatedButton(
-        onPressed: () {},
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Color(0xFF2EBBC3)),
-          minimumSize: MaterialStateProperty.all(
-            const Size(double.infinity, 40),
-          ),
+    return ElevatedButton(
+      onPressed: () {},
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(const Color(0xFF2EBBC3)),
+        minimumSize: MaterialStateProperty.all(
+          const Size(double.infinity, 40),
         ),
-        child: const Text("text button"),
       ),
+      child: const Text("text button"),
     );
   }
 }

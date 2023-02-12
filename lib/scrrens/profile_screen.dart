@@ -167,31 +167,54 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: height / 20,
               ),
               ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: imagedata.length,
-                itemBuilder: (context, index) => ListTile(
-                  leading: Image.asset(imagedata[index]),
-                  title: Text(data[index]),
-                  trailing: const Icon(Icons.navigate_next),
+                itemBuilder: (context, index) => ElevatedButton(
+                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {},
+                  child: ListTile(
+                    leading: Image.asset(imagedata[index]),
+                    title: Text(data[index]),
+                    trailing: const Icon(Icons.navigate_next),
+                  ),
                 ),
               ),
               const Divider(
                 thickness: 1,
               ),
               ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: icondata.length,
-                itemBuilder: (context, index) => ListTile(
-                  leading: Image.asset(icondata[index]),
-                  title: Text(editdata[index]),
-                  trailing: const Icon(Icons.navigate_next),
+                itemBuilder: (context, index) => ElevatedButton(
+                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white)),
+                  onPressed: () {},
+                  child: ListTile(
+                    leading: Image.asset(icondata[index]),
+                    title: Text(editdata[index]),
+                    trailing: const Icon(Icons.navigate_next),
+                  ),
                 ),
               ),
             ],
           ),
         ),
+      ),
+      bottomSheet: BottomSheet(
+        builder: (context) => Container(
+          height: 70,
+          width: double.infinity,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Image.asset("assets/images/groud.png"),
+              Image.asset("assets/images/path.png"),
+              Image.asset("assets/images/category.png"),
+              Image.asset("assets/images/Profiles.png"),
+            ],
+          ),
+        ),
+        onClosing: () {},
       ),
     );
   }

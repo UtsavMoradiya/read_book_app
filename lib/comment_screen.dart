@@ -20,8 +20,7 @@ class _CommentScreenState extends State<CommentScreen> {
         ),
         title: const Text(
           "Comment",
-          style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
         ),
       ),
       body: Padding(
@@ -38,7 +37,7 @@ class _CommentScreenState extends State<CommentScreen> {
                 children: [
                   Image.asset("assets/images/Avatar.png"),
                   Row(
-                    children: [const Text("")],
+                    children: const [Text("")],
                   )
                 ],
               ),
