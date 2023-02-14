@@ -166,41 +166,46 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(
                 height: height / 20,
               ),
-              ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: imagedata.length,
-                itemBuilder: (context, index) => ElevatedButton(
-                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white)),
-                  onPressed: () {},
-                  child: ListTile(
-                    leading: Image.asset(imagedata[index]),
-                    title: Text(data[index]),
-                    trailing: const Icon(Icons.navigate_next),
+              Column(
+                children: [
+                  ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: imagedata.length,
+                    itemBuilder: (context, index) => ElevatedButton(
+                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white)),
+                      onPressed: () {},
+                      child: ListTile(
+                        leading: Image.asset(imagedata[index]),
+                        title: Text(data[index]),
+                        trailing: const Icon(Icons.navigate_next),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              const Divider(
-                thickness: 1,
-              ),
-              ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: icondata.length,
-                itemBuilder: (context, index) => ElevatedButton(
-                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white)),
-                  onPressed: () {},
-                  child: ListTile(
-                    leading: Image.asset(icondata[index]),
-                    title: Text(editdata[index]),
-                    trailing: const Icon(Icons.navigate_next),
+                  const Divider(
+                    thickness: 1,
                   ),
-                ),
+                  ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: icondata.length,
+                    itemBuilder: (context, index) => ElevatedButton(
+                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white)),
+                      onPressed: () {},
+                      child: ListTile(
+                        leading: Image.asset(icondata[index]),
+                        title: Text(editdata[index]),
+                        trailing: const Icon(Icons.navigate_next),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
         ),
       ),
-      bottomSheet: BottomSheet(
+      bottomNavigationBar: BottomSheet(
         builder: (context) => Container(
           height: 70,
           width: double.infinity,

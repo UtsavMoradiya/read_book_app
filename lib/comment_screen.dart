@@ -23,6 +23,11 @@ class _CommentScreenState extends State<CommentScreen> {
     "Malcolm",
     "Laura Rosell",
   ];
+  List<String> numberdata = [
+    "2",
+    "14",
+    "9",
+  ];
   List<String> datedata = [
     "2019-03-12",
     "2019-03-12",
@@ -70,23 +75,43 @@ class _CommentScreenState extends State<CommentScreen> {
         child: ListView.builder(
           itemCount: imagedata.length,
           itemBuilder: (context, index) => ListTile(
-            trailing: Image.asset("assets/images/hartimage.png"),
+            // trailing: Image.asset("assets/images/hartimage.png"),
             leading: Image.asset(imagedata[index]),
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  textdata[index],
-                  style: TextStyle(color: Color(0xFF8E8E93)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      textdata[index],
+                      style: const TextStyle(color: Color(0xFF8E8E93)),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          numberdata[index],
+                          style: TextStyle(color: Color(0XFF8E8E93)),
+                        ),
+                        SizedBox(
+                          width: width / 32,
+                        ),
+                        Image.asset("assets/images/hartimage.png"),
+                      ],
+                    )
+                  ],
                 ),
                 Text(
                   datedata[index],
-                  style: TextStyle(color: Color(0xFFC7C7CC)),
+                  style: const TextStyle(color: Color(0xFFC7C7CC)),
                 ),
                 SizedBox(
-                  height: height / 43,
+                  height: height / 83,
                 ),
                 Text(textdataone[index]),
+                SizedBox(
+                  height: height / 40,
+                ),
                 Container(
                   height: height / 10,
                   width: width / 1,
@@ -101,6 +126,9 @@ class _CommentScreenState extends State<CommentScreen> {
                         padding: EdgeInsets.only(top: height / 65, left: width / 20),
                         child: Image.asset(imagedataone[index]),
                       ),
+                      SizedBox(
+                        width: width / 35,
+                      ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -108,12 +136,15 @@ class _CommentScreenState extends State<CommentScreen> {
                           Text(textdatatwo[index]),
                           Text(
                             textdatathree[index],
-                            style: TextStyle(color: Color(0xFFC7C7CC)),
+                            style: const TextStyle(color: Color(0xFFC7C7CC)),
                           ),
                         ],
                       ),
                     ],
                   ),
+                ),
+                SizedBox(
+                  height: height / 50,
                 ),
               ],
             ),
