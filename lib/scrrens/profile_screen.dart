@@ -82,9 +82,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: Container(
                       height: height / 4.5,
                       width: width / 1.2,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10)),
+                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10)),
                       child: Column(
                         children: [
                           SizedBox(
@@ -97,8 +95,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               ),
                               Text(
                                 "Limpitsouni",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: text * 25),
+                                style: TextStyle(color: Colors.black, fontSize: text * 25),
                               ),
                               SizedBox(
                                 width: width / 10,
@@ -109,15 +106,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 decoration: BoxDecoration(
                                   // color: Color(0xFF2EBBC3),
                                   borderRadius: BorderRadius.circular(15),
-                                  border: Border.all(
-                                      color: const Color(0xFF2EBBC3)),
+                                  border: Border.all(color: const Color(0xFF2EBBC3)),
                                 ),
                                 child: Center(
                                   child: Text(
                                     "Edit",
-                                    style: TextStyle(
-                                        color: const Color(0xFF2EBBC3),
-                                        fontSize: text * 20),
+                                    style: TextStyle(color: const Color(0xFF2EBBC3), fontSize: text * 20),
                                   ),
                                 ),
                               ),
@@ -129,18 +123,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             children: [
                               Text(
                                 "135",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: text * 25),
+                                style: TextStyle(color: Colors.black, fontSize: text * 25),
                               ),
                               Text(
                                 "209",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: text * 25),
+                                style: TextStyle(color: Colors.black, fontSize: text * 25),
                               ),
                               Text(
                                 "26K",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: text * 25),
+                                style: TextStyle(color: Colors.black, fontSize: text * 25),
                               ),
                             ],
                           ),
@@ -149,24 +140,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             children: [
                               Text(
                                 "Comments",
-                                style: TextStyle(
-                                    color: const Color(0xFF8E8E93),
-                                    fontSize: text * 20,
-                                    fontWeight: FontWeight.w300),
+                                style: TextStyle(color: const Color(0xFF8E8E93), fontSize: text * 20, fontWeight: FontWeight.w300),
                               ),
                               Text(
                                 "Following",
-                                style: TextStyle(
-                                    color: const Color(0xFF8E8E93),
-                                    fontSize: text * 20,
-                                    fontWeight: FontWeight.w300),
+                                style: TextStyle(color: const Color(0xFF8E8E93), fontSize: text * 20, fontWeight: FontWeight.w300),
                               ),
                               Text(
                                 "Followers",
-                                style: TextStyle(
-                                    color: const Color(0xFF8E8E93),
-                                    fontSize: text * 20,
-                                    fontWeight: FontWeight.w300),
+                                style: TextStyle(color: const Color(0xFF8E8E93), fontSize: text * 20, fontWeight: FontWeight.w300),
                               ),
                             ],
                           ),
@@ -184,43 +166,46 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(
                 height: height / 20,
               ),
-              ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: imagedata.length,
-                itemBuilder: (context, index) => ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white)),
-                  onPressed: () {},
-                  child: ListTile(
-                    leading: Image.asset(imagedata[index]),
-                    title: Text(data[index]),
-                    trailing: const Icon(Icons.navigate_next),
+              Column(
+                children: [
+                  ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: imagedata.length,
+                    itemBuilder: (context, index) => ElevatedButton(
+                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white)),
+                      onPressed: () {},
+                      child: ListTile(
+                        leading: Image.asset(imagedata[index]),
+                        title: Text(data[index]),
+                        trailing: const Icon(Icons.navigate_next),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              const Divider(
-                thickness: 1,
-              ),
-              ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: icondata.length,
-                itemBuilder: (context, index) => ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white)),
-                  onPressed: () {},
-                  child: ListTile(
-                    leading: Image.asset(icondata[index]),
-                    title: Text(editdata[index]),
-                    trailing: const Icon(Icons.navigate_next),
+                  const Divider(
+                    thickness: 1,
                   ),
-                ),
+                  ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: icondata.length,
+                    itemBuilder: (context, index) => ElevatedButton(
+                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white)),
+                      onPressed: () {},
+                      child: ListTile(
+                        leading: Image.asset(icondata[index]),
+                        title: Text(editdata[index]),
+                        trailing: const Icon(Icons.navigate_next),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
         ),
       ),
-      bottomSheet: BottomSheet(
+      bottomNavigationBar: BottomSheet(
         builder: (context) => Container(
           height: 70,
           width: double.infinity,

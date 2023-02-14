@@ -47,7 +47,12 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
             Container(
               height: height / 2.7,
               width: double.infinity,
-              color: const Color(0XFF2EBBC3),
+              color: Colors.yellow,
+            ),
+            Container(
+              height: height / 3.5,
+              width: double.infinity,
+              color: Color(0XFF2EBBC3),
               child: Column(
                 children: [
                   Text(
@@ -80,14 +85,29 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                   SizedBox(
                     height: height / 20,
                   ),
-                  Container(
-                    height: 100,
-                    width: 100,
-                    color: Colors.yellow,
-                  ),
                 ],
               ),
             ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: height / 4,
+                left: width / 10,
+                right: width / 10,
+              ),
+              child: Container(
+                height: height / 10,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Row(
+                  children: [
+                    Image.asset("assets/images/bank card.png"),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
