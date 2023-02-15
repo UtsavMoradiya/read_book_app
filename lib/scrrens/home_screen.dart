@@ -142,6 +142,190 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
+                SizedBox(
+                  height: height / 30,
+                ),
+                Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      "Bookshelf",
+                      style:
+                          TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      width: width / 2.4,
+                    ),
+                    const Text(
+                      "View all",
+                    ),
+                    const Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      color: Colors.grey,
+                      size: 15,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: height / 50,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      // mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset("assets/images/mask3.png"),
+                        SizedBox(
+                          height: height / 60,
+                        ),
+                        const Text(
+                          "The Orphan...",
+                          style: TextStyle(fontSize: 16),
+                        ),
+                        const SizedBox(
+                          height: 3,
+                        ),
+                        const Text(
+                          "Shirley Dickson",
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      // mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset("assets/images/mask4.png"),
+                        SizedBox(
+                          height: height / 60,
+                        ),
+                        const Text(
+                          "Daughters...",
+                          style: TextStyle(fontSize: 16),
+                        ),
+                        const SizedBox(
+                          height: 3,
+                        ),
+                        const Text(
+                          "Lizzie Page",
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      // mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset("assets/images/mask5.png"),
+                        SizedBox(
+                          height: height / 60,
+                        ),
+                        const Text(
+                          "The Runaw...",
+                          style: TextStyle(fontSize: 16),
+                        ),
+                        const SizedBox(
+                          height: 3,
+                        ),
+                        const Text(
+                          "Sandy Taylor",
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: height / 30,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      // mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset("assets/images/mask6.png"),
+                        SizedBox(
+                          height: height / 60,
+                        ),
+                        const Text(
+                          "How to Sol...",
+                          style: TextStyle(fontSize: 16),
+                        ),
+                        const SizedBox(
+                          height: 3,
+                        ),
+                        const Text(
+                          " Jake Knapp",
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      // mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset("assets/images/mask7.png"),
+                        SizedBox(
+                          height: height / 60,
+                        ),
+                        const Text(
+                          "Contagious...",
+                          style: TextStyle(fontSize: 16),
+                        ),
+                        const SizedBox(
+                          height: 3,
+                        ),
+                        const Text(
+                          "Jonah Berger",
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      // mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset("assets/images/mask8.png"),
+                        SizedBox(
+                          height: height / 60,
+                        ),
+                        const Text(
+                          "The pieces...",
+                          style: TextStyle(fontSize: 16),
+                        ),
+                        const SizedBox(
+                          height: 3,
+                        ),
+                        const Text(
+                          "Mary Alice ",
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
