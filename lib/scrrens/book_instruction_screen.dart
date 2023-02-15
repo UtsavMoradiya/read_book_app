@@ -57,6 +57,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
           ),
         ],
       ),
+
       body: SafeArea(
         top: true,
         bottom: true,
