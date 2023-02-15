@@ -8,6 +8,23 @@ class BookInstructionScreen extends StatefulWidget {
 }
 
 class _BookInstructionScreenState extends State<BookInstructionScreen> {
+  List<String> imagedata = [
+    "assets/images/Avatar1.png",
+    "assets/images/Avatar2.png",
+    "assets/images/Avatar3.png",
+  ];
+  List<String> textdata = [
+    "Catherine",
+    "Malcolm",
+    "Laura Rosell",
+  ];
+
+  List<String> textdataone = [
+    "When I ordered this book I did not\nrealize the author wasJanne linghurst,\nbut I soon realized it was her. ",
+    "I liked the story,  It seems a recurring\ntheme that a child must die in most of\nher stories. ",
+    "I bought this memoir based on the\nrecommendation from a friend. I felt like\nI was struggling with some things. ",
+  ];
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -23,9 +40,20 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
           color: Colors.grey.shade800,
         ),
         elevation: 0,
-        actions: const [
-          Image(
-            image: AssetImage("assets/images/share.png"),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              showModalBottomSheet(context: context, builder: (context) {
+                return Container(
+                  height: 280,
+                  width: double.infinity,
+                  color: Colors.black,
+                );
+              },);
+            },
+            child: Image(
+              image: AssetImage("assets/images/share.png"),
+            ),
           ),
         ],
       ),
@@ -36,6 +64,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
           child: Padding(
             padding: EdgeInsets.only(left: width / 25, right: width / 25),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   // mainAxisAlignment: MainAxisAlignment.start,
@@ -107,6 +136,95 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                     ),
                   ],
                 ),
+                SizedBox(height: height / 20),
+                const Text(
+                  "Introduction",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: height / 50),
+                const Text(
+                  "In this richly emotional novel inspired by extraordinary\ntrue accounts, New York Times bestselling author Kristina McMorris evokes the depth...Read more",
+                  style: TextStyle(color: Colors.grey),
+                ),
+                SizedBox(height: height / 30),
+                const Divider(
+                  height: 1,
+                  color: Colors.grey,
+                ),
+                SizedBox(height: height / 70),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text("Catalog：The 235 chapter",
+                        style: TextStyle(fontSize: 16)),
+                    Icon(
+                      Icons.dehaze_rounded,
+                      color: Color(0xFF2EBBC3),
+                    ),
+                  ],
+                ),
+                SizedBox(height: height / 70),
+                const Divider(
+                  height: 1,
+                  color: Colors.grey,
+                ),
+                SizedBox(height: height / 70),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text("Add to bookshlf", style: TextStyle(fontSize: 16)),
+                    Icon(
+                      Icons.add_box_outlined,
+                      color: Color(0xFF2EBBC3),
+                    ),
+                  ],
+                ),
+                SizedBox(height: height / 70),
+                const Divider(
+                  height: 1,
+                  color: Colors.grey,
+                ),
+                SizedBox(height: height / 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text(
+                      "Comments",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      "write a comment",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color(0xFF2EBBC3),
+                      ),
+                    ),
+                  ],
+                ),
+                // ListView.builder(
+                //   itemCount: imagedata.length,
+                //   itemBuilder: (context, index) => ListTile(
+                //     // trailing: Image.asset("assets/images/hartimage.png"),
+                //     leading: Image.asset(imagedata[index]),
+                //     title: Column(
+                //       crossAxisAlignment: CrossAxisAlignment.start,
+                //       children: [
+                //         Text(
+                //           textdata[index],
+                //           style: const TextStyle(color: Color(0xFF8E8E93)),
+                //         ),
+                //         Text(
+                //           textdataone[index],
+                //           style: const TextStyle(color: Color(0xFF8E8E93)),
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
