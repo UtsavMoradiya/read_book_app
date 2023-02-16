@@ -13,6 +13,14 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
     "assets/images/Avatar2.png",
     "assets/images/Avatar3.png",
   ];
+
+  List<String> imagedataone = [
+    "assets/images/Facebook.png",
+    "assets/images/Google-+.png",
+    "assets/images/Line.png",
+    "assets/images/LinkedIN.png",
+    "assets/images/Mail.png",
+  ];
   List<String> textdata = [
     "Catherine",
     "Malcolm",
@@ -23,6 +31,14 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
     "When I ordered this book I did not\nrealize the author wasJanne linghurst,\nbut I soon realized it was her. ",
     "I liked the story,  It seems a recurring\ntheme that a child must die in most of\nher stories. ",
     "I bought this memoir based on the\nrecommendation from a friend. I felt like\nI was struggling with some things. ",
+  ];
+
+  List<String> textdatatwo = [
+    "Facebook",
+    "Google+",
+    "Line",
+    "Linkedln",
+    "E-mail",
   ];
 
   @override
@@ -48,13 +64,58 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                 builder: (context) {
                   return Container(
                     height: 280,
-                    width: double.infinity,
-                    color: Colors.black,
+                    color: Colors.white,
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: height / 35,
+                        ),
+                        const Text(
+                          "Share the book",
+                          style: TextStyle(fontSize: 18, color: Colors.grey),
+                        ),
+                        SizedBox(height: height / 25),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: imagedataone
+                              .map((value) => Image.asset(
+                                    value,
+                                    scale: 0.8,
+                                  ))
+                              .toList(),
+                        ),
+                        SizedBox(height: height / 70),
+                        Row(
+                          children: [
+                            SizedBox(width: width / 25),
+                            Text("Facebook", style: TextStyle(color: Colors.grey)),
+                            SizedBox(width: width / 25),
+                            Text("Google+", style: TextStyle(color: Colors.grey)),
+                            SizedBox(width: width / 11),
+                            Text("Line", style: TextStyle(color: Colors.grey)),
+                            SizedBox(width: width / 10),
+                            Text("Linkedln", style: TextStyle(color: Colors.grey)),
+                            SizedBox(width: width / 13),
+                            Text("E-mail", style: TextStyle(color: Colors.grey)),
+                          ],
+                        ),
+                        SizedBox(
+                          height: height / 25,
+                        ),
+                        Container(
+                          height: height / 15,
+                          width: width / 1.1,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(color: Color(0xFFF0F2F1), borderRadius: BorderRadius.circular(10)),
+                          child: Text("Cancel", style: TextStyle(fontSize: 20)),
+                        ),
+                      ],
+                    ),
                   );
                 },
               );
             },
-            child: Image(
+            child: const Image(
               image: AssetImage("assets/images/share.png"),
             ),
           ),
@@ -79,8 +140,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                     children: [
                       const Text("The pieces we keep"),
                       const SizedBox(height: 8),
-                      Text("By Mary Alice ",
-                          style: TextStyle(color: Colors.grey.shade400)),
+                      Text("By Mary Alice ", style: TextStyle(color: Colors.grey.shade400)),
                       SizedBox(
                         height: height / 85,
                       ),
@@ -98,8 +158,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                             ),
                             child: Text(
                               "Historical Fiction",
-                              style: TextStyle(
-                                  fontSize: 8, color: Colors.grey.shade600),
+                              style: TextStyle(fontSize: 8, color: Colors.grey.shade600),
                             ),
                           ),
                           SizedBox(width: width / 20),
@@ -115,8 +174,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                             ),
                             child: Text(
                               "Sisters",
-                              style: TextStyle(
-                                  fontSize: 8, color: Colors.grey.shade600),
+                              style: TextStyle(fontSize: 8, color: Colors.grey.shade600),
                             ),
                           ),
                         ],
@@ -160,8 +218,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
-                  Text("Catalog：The 235 chapter",
-                      style: TextStyle(fontSize: 16)),
+                  Text("Catalog：The 235 chapter", style: TextStyle(fontSize: 16)),
                   Icon(
                     Icons.dehaze_rounded,
                     color: Color(0xFF2EBBC3),
@@ -208,7 +265,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
               ),
               ListView.builder(
                 itemCount: imagedata.length,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemBuilder: (context, index) => ListTile(
                   // trailing: Image.asset("assets/images/hartimage.png"),
