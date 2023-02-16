@@ -43,13 +43,16 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
         actions: [
           GestureDetector(
             onTap: () {
-              showModalBottomSheet(context: context, builder: (context) {
-                return Container(
-                  height: 280,
-                  width: double.infinity,
-                  color: Colors.black,
-                );
-              },);
+              showModalBottomSheet(
+                context: context,
+                builder: (context) {
+                  return Container(
+                    height: 280,
+                    width: double.infinity,
+                    color: Colors.black,
+                  );
+                },
+              );
             },
             child: Image(
               image: AssetImage("assets/images/share.png"),
@@ -57,177 +60,175 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
           ),
         ],
       ),
-
       body: SafeArea(
         top: true,
         bottom: true,
         child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.only(left: width / 25, right: width / 25),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  // mainAxisAlignment: MainAxisAlignment.start,
-                  // crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image.asset("assets/images/book.png"),
-                    SizedBox(width: width / 20),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text("The pieces we keep"),
-                        const SizedBox(height: 8),
-                        Text("By Mary Alice ",
-                            style: TextStyle(color: Colors.grey.shade400)),
-                        SizedBox(
-                          height: height / 85,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              height: height / 30,
-                              width: width / 4,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade300,
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(5),
-                                ),
-                              ),
-                              child: Text(
-                                "Historical Fiction",
-                                style: TextStyle(
-                                    fontSize: 8, color: Colors.grey.shade600),
+          padding: EdgeInsets.only(left: width / 25, right: width / 25),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                // mainAxisAlignment: MainAxisAlignment.start,
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset("assets/images/book.png"),
+                  SizedBox(width: width / 20),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text("The pieces we keep"),
+                      const SizedBox(height: 8),
+                      Text("By Mary Alice ",
+                          style: TextStyle(color: Colors.grey.shade400)),
+                      SizedBox(
+                        height: height / 85,
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            height: height / 30,
+                            width: width / 4,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade300,
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(5),
                               ),
                             ),
-                            SizedBox(width: width / 20),
-                            Container(
-                              height: height / 30,
-                              width: width / 8,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade300,
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(5),
-                                ),
-                              ),
-                              child: Text(
-                                "Sisters",
-                                style: TextStyle(
-                                    fontSize: 8, color: Colors.grey.shade600),
-                              ),
+                            child: Text(
+                              "Historical Fiction",
+                              style: TextStyle(
+                                  fontSize: 8, color: Colors.grey.shade600),
                             ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: height / 85,
-                        ),
-                        Image.asset("assets/images/star.png"),
-                        SizedBox(
-                          height: height / 85,
-                        ),
-                        const Text(
-                          "\$7.50",
-                          style: TextStyle(
-                            color: Color(0xFF2EBBC3),
                           ),
+                          SizedBox(width: width / 20),
+                          Container(
+                            height: height / 30,
+                            width: width / 8,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade300,
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(5),
+                              ),
+                            ),
+                            child: Text(
+                              "Sisters",
+                              style: TextStyle(
+                                  fontSize: 8, color: Colors.grey.shade600),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: height / 85,
+                      ),
+                      Image.asset("assets/images/star.png"),
+                      SizedBox(
+                        height: height / 85,
+                      ),
+                      const Text(
+                        "\$7.50",
+                        style: TextStyle(
+                          color: Color(0xFF2EBBC3),
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: height / 20),
+              const Text(
+                "Introduction",
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
                 ),
-                SizedBox(height: height / 20),
-                const Text(
-                  "Introduction",
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
+              ),
+              SizedBox(height: height / 50),
+              const Text(
+                "In this richly emotional novel inspired by extraordinary\ntrue accounts, New York Times bestselling author Kristina McMorris evokes the depth...Read more",
+                style: TextStyle(color: Colors.grey),
+              ),
+              SizedBox(height: height / 30),
+              const Divider(
+                height: 1,
+                color: Colors.grey,
+              ),
+              SizedBox(height: height / 70),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text("Catalog：The 235 chapter",
+                      style: TextStyle(fontSize: 16)),
+                  Icon(
+                    Icons.dehaze_rounded,
+                    color: Color(0xFF2EBBC3),
+                  ),
+                ],
+              ),
+              SizedBox(height: height / 70),
+              const Divider(
+                height: 1,
+                color: Colors.grey,
+              ),
+              SizedBox(height: height / 70),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text("Add to bookshlf", style: TextStyle(fontSize: 16)),
+                  Icon(
+                    Icons.add_box_outlined,
+                    color: Color(0xFF2EBBC3),
+                  ),
+                ],
+              ),
+              SizedBox(height: height / 70),
+              const Divider(
+                height: 1,
+                color: Colors.grey,
+              ),
+              SizedBox(height: height / 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    "Comments",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "write a comment",
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Color(0xFF2EBBC3),
+                    ),
+                  ),
+                ],
+              ),
+              ListView.builder(
+                itemCount: imagedata.length,
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemBuilder: (context, index) => ListTile(
+                  // trailing: Image.asset("assets/images/hartimage.png"),
+                  leading: Image.asset(imagedata[index]),
+                  title: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        textdata[index],
+                        style: const TextStyle(color: Color(0xFF8E8E93)),
+                      ),
+                      Text(
+                        textdataone[index],
+                        style: const TextStyle(color: Color(0xFF8E8E93)),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(height: height / 50),
-                const Text(
-                  "In this richly emotional novel inspired by extraordinary\ntrue accounts, New York Times bestselling author Kristina McMorris evokes the depth...Read more",
-                  style: TextStyle(color: Colors.grey),
-                ),
-                SizedBox(height: height / 30),
-                const Divider(
-                  height: 1,
-                  color: Colors.grey,
-                ),
-                SizedBox(height: height / 70),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text("Catalog：The 235 chapter",
-                        style: TextStyle(fontSize: 16)),
-                    Icon(
-                      Icons.dehaze_rounded,
-                      color: Color(0xFF2EBBC3),
-                    ),
-                  ],
-                ),
-                SizedBox(height: height / 70),
-                const Divider(
-                  height: 1,
-                  color: Colors.grey,
-                ),
-                SizedBox(height: height / 70),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text("Add to bookshlf", style: TextStyle(fontSize: 16)),
-                    Icon(
-                      Icons.add_box_outlined,
-                      color: Color(0xFF2EBBC3),
-                    ),
-                  ],
-                ),
-                SizedBox(height: height / 70),
-                const Divider(
-                  height: 1,
-                  color: Colors.grey,
-                ),
-                SizedBox(height: height / 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
-                      "Comments",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "write a comment",
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: Color(0xFF2EBBC3),
-                      ),
-                    ),
-                  ],
-                ),
-                // ListView.builder(
-                //   itemCount: imagedata.length,
-                //   itemBuilder: (context, index) => ListTile(
-                //     // trailing: Image.asset("assets/images/hartimage.png"),
-                //     leading: Image.asset(imagedata[index]),
-                //     title: Column(
-                //       crossAxisAlignment: CrossAxisAlignment.start,
-                //       children: [
-                //         Text(
-                //           textdata[index],
-                //           style: const TextStyle(color: Color(0xFF8E8E93)),
-                //         ),
-                //         Text(
-                //           textdataone[index],
-                //           style: const TextStyle(color: Color(0xFF8E8E93)),
-                //         ),
-                //       ],
-                //     ),
-                //   ),
-                // ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
