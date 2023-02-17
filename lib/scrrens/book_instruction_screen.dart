@@ -8,6 +8,8 @@ class BookInstructionScreen extends StatefulWidget {
 }
 
 class _BookInstructionScreenState extends State<BookInstructionScreen> {
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+
   List<String> imagedata = [
     "assets/images/Avatar1.png",
     "assets/images/Avatar2.png",
@@ -33,7 +35,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
     "The Pieces We Keep is a fascinating tale of the pain of loss, mother's love, the power of an innocent child, the....",
   ];
 
-  List<String> textdatatwo = [
+  List<String> textDataTwo = [
     "Facebook",
     "Google+",
     "Line",
@@ -49,6 +51,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
     double text = MediaQuery.of(context).textScaleFactor;
 
     return Scaffold(
+      key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: const Color(0xFFFFFFFF),
         leading: Icon(
@@ -126,6 +129,49 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
             ),
           ),
         ],
+      ),
+      endDrawer: Drawer(
+        child: Column(
+          children: [
+            SizedBox(
+              height: height / 20,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                prefixIcon: const Icon(Icons.search),
+                suffixIcon: const Icon(Icons.mic),
+                hintText: "search",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                filled: true,
+                fillColor: Colors.grey.shade300,
+                contentPadding: const EdgeInsets.symmetric(vertical: 5),
+              ),
+            ),
+            SizedBox(
+              height: height / 25,
+            ),
+            Row(
+              children: [
+                SizedBox(width: width / 20),
+                Image.asset("assets/images/book.png", scale: 2.2),
+                SizedBox(width: width / 20),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    // SizedBox(
+                    //   height: height / 80,
+                    // ),
+                    Text("The pieces we keep", style: TextStyle(fontSize: 18)),
+                    Text("Mary Alice ", style: TextStyle(color: Colors.grey, fontSize: 16)),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
       body: SafeArea(
         top: true,
@@ -224,11 +270,16 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
               SizedBox(height: height / 70),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text("Catalog：The 235 chapter", style: TextStyle(fontSize: 16)),
-                  Icon(
-                    Icons.dehaze_rounded,
-                    color: Color(0xFF2EBBC3),
+                  GestureDetector(
+                    onTap: () {
+                      scaffoldKey.currentState!.openEndDrawer();
+                    },
+                    child: Icon(
+                      Icons.dehaze_rounded,
+                      color: Color(0xFF2EBBC3),
+                    ),
                   ),
                 ],
               ),
