@@ -305,7 +305,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: height / 40),
+              SizedBox(height: height / 42),
             ],
           ),
         ),
