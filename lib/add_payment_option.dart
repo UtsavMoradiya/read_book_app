@@ -80,9 +80,7 @@ class _AddPaymentState extends State<AddPayment> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: height / 40,
-                ),
+                SizedBox(height: height / 40),
                 Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Container(
