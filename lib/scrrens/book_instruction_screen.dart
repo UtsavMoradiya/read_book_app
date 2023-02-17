@@ -61,6 +61,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
             onTap: () {
               showModalBottomSheet(
                 context: context,
+                isDismissible: false,
                 builder: (context) {
                   return Container(
                     height: 280,
@@ -88,34 +89,31 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                         Row(
                           children: [
                             SizedBox(width: width / 25),
-                            const Text("Facebook",
-                                style: TextStyle(color: Colors.grey)),
+                            const Text("Facebook", style: TextStyle(color: Colors.grey)),
                             SizedBox(width: width / 25),
-                            const Text("Google+",
-                                style: TextStyle(color: Colors.grey)),
+                            const Text("Google+", style: TextStyle(color: Colors.grey)),
                             SizedBox(width: width / 11),
-                            const Text("Line",
-                                style: TextStyle(color: Colors.grey)),
+                            const Text("Line", style: TextStyle(color: Colors.grey)),
                             SizedBox(width: width / 10),
-                            const Text("Linkedln",
-                                style: TextStyle(color: Colors.grey)),
+                            const Text("Linkedln", style: TextStyle(color: Colors.grey)),
                             SizedBox(width: width / 13),
-                            const Text("E-mail",
-                                style: TextStyle(color: Colors.grey)),
+                            const Text("E-mail", style: TextStyle(color: Colors.grey)),
                           ],
                         ),
                         SizedBox(
                           height: height / 25,
                         ),
-                        Container(
-                          height: height / 15,
-                          width: width / 1.1,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                              color: const Color(0xFFF0F2F1),
-                              borderRadius: BorderRadius.circular(10)),
-                          child: const Text("Cancel",
-                              style: TextStyle(fontSize: 20)),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Container(
+                            height: height / 15,
+                            width: width / 1.1,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(color: const Color(0xFFF0F2F1), borderRadius: BorderRadius.circular(10)),
+                            child: const Text("Cancel", style: TextStyle(fontSize: 20)),
+                          ),
                         ),
                       ],
                     ),
@@ -149,8 +147,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                     children: [
                       const Text("The pieces we keep"),
                       const SizedBox(height: 8),
-                      Text("By Mary Alice ",
-                          style: TextStyle(color: Colors.grey.shade400)),
+                      Text("By Mary Alice ", style: TextStyle(color: Colors.grey.shade400)),
                       SizedBox(
                         height: height / 85,
                       ),
@@ -168,8 +165,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                             ),
                             child: Text(
                               "Historical Fiction",
-                              style: TextStyle(
-                                  fontSize: 8, color: Colors.grey.shade600),
+                              style: TextStyle(fontSize: 8, color: Colors.grey.shade600),
                             ),
                           ),
                           SizedBox(width: width / 20),
@@ -185,8 +181,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                             ),
                             child: Text(
                               "Sisters",
-                              style: TextStyle(
-                                  fontSize: 8, color: Colors.grey.shade600),
+                              style: TextStyle(fontSize: 8, color: Colors.grey.shade600),
                             ),
                           ),
                         ],
@@ -230,8 +225,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
-                  Text("Catalog：The 235 chapter",
-                      style: TextStyle(fontSize: 16)),
+                  Text("Catalog：The 235 chapter", style: TextStyle(fontSize: 16)),
                   Icon(
                     Icons.dehaze_rounded,
                     color: Color(0xFF2EBBC3),
@@ -341,28 +335,26 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                 onTap: () {
                   showModalBottomSheet(
                     context: context,
+                    isDismissible: false,
                     builder: (context) {
                       return Container(
                         height: 550,
                         color: Colors.white,
                         child: Padding(
-                          padding: EdgeInsets.only(
-                              left: width / 22, right: width / 22),
+                          padding: EdgeInsets.only(left: width / 22, right: width / 22),
                           child: Column(
                             children: [
                               SizedBox(height: height / 50),
                               Row(
                                 children: [
                                   SizedBox(width: width / 2.8),
-                                  const Text("Payment",
-                                      style: TextStyle(fontSize: 20)),
+                                  const Text("Payment", style: TextStyle(fontSize: 20)),
                                   SizedBox(width: width / 3.6),
                                   GestureDetector(
                                     onTap: () {
                                       Navigator.pop(context);
                                     },
-                                    child: const Icon(Icons.close,
-                                        color: Colors.grey),
+                                    child: const Icon(Icons.close, color: Colors.grey),
                                   ),
                                 ],
                               ),
@@ -375,30 +367,21 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                               Container(
                                 height: height / 10,
                                 width: double.infinity,
-                                decoration: BoxDecoration(
-                                    color: Colors.grey.shade200,
-                                    borderRadius: BorderRadius.circular(15)),
+                                decoration: BoxDecoration(color: Colors.grey.shade200, borderRadius: BorderRadius.circular(15)),
                                 child: Row(
                                   children: [
                                     SizedBox(width: width / 20),
-                                    Image.asset("assets/images/book.png",
-                                        scale: 2.2),
+                                    Image.asset("assets/images/book.png", scale: 2.2),
                                     SizedBox(width: width / 20),
                                     Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: const [
                                         // SizedBox(
                                         //   height: height / 80,
                                         // ),
-                                        Text("The pieces we keep",
-                                            style: TextStyle(fontSize: 18)),
-                                        Text("Mary Alice ",
-                                            style: TextStyle(
-                                                color: Colors.grey,
-                                                fontSize: 16)),
+                                        Text("The pieces we keep", style: TextStyle(fontSize: 18)),
+                                        Text("Mary Alice ", style: TextStyle(color: Colors.grey, fontSize: 16)),
                                       ],
                                     ),
                                   ],
@@ -407,14 +390,10 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                               SizedBox(
                                 height: height / 40,
                               ),
-                              const Text("Sub Total",
-                                  style: TextStyle(color: Colors.grey)),
+                              const Text("Sub Total", style: TextStyle(color: Colors.grey)),
                               const Text(
                                 "\7.50＄",
-                                style: TextStyle(
-                                    color: Color(0xFF2EBBC3),
-                                    fontSize: 35,
-                                    fontWeight: FontWeight.bold),
+                                style: TextStyle(color: Color(0xFF2EBBC3), fontSize: 35, fontWeight: FontWeight.bold),
                               ),
                               SizedBox(height: height / 45),
                               Divider(
@@ -422,24 +401,18 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                                 color: Colors.grey.shade300,
                               ),
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   SizedBox(height: height / 20),
-                                  Text("Discount",
-                                      style: TextStyle(
-                                          color: Colors.grey, fontSize: 18)),
+                                  Text("Discount", style: TextStyle(color: Colors.grey, fontSize: 18)),
                                   Text("40%"),
                                 ],
                               ),
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   SizedBox(height: height / 20),
-                                  Text("actual payment",
-                                      style: TextStyle(
-                                          color: Colors.grey, fontSize: 18)),
+                                  Text("actual payment", style: TextStyle(color: Colors.grey, fontSize: 18)),
                                   Text("＄4.50%",
                                       style: TextStyle(
                                         color: Color(0xFFFCB622),
@@ -456,9 +429,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                                 height: height / 15,
                                 width: width / 1.1,
                                 alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                    color: Color(0xFF2EBBC3),
-                                    borderRadius: BorderRadius.circular(10)),
+                                decoration: BoxDecoration(color: Color(0xFF2EBBC3), borderRadius: BorderRadius.circular(10)),
                                 child: const Text(
                                   "Submit",
                                   style: TextStyle(

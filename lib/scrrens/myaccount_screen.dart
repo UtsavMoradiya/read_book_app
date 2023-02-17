@@ -27,6 +27,7 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
     "/+＄80.00",
     "/-＄9.50",
   ];
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -49,155 +50,161 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
       body: SafeArea(
         top: true,
         bottom: true,
-        child: Column(
-          children: [
-            Stack(
-              children: [
-                Container(
-                  height: height / 2.7,
-                  width: double.infinity,
-                  color: Colors.white,
-                ),
-                Container(
-                  height: height / 3.5,
-                  width: double.infinity,
-                  color: const Color(0XFF2EBBC3),
-                  child: Column(
-                    children: [
-                      Text(
-                        "Balance",
-                        style: TextStyle(color: Colors.white, fontSize: text * 13),
-                      ),
-                      Text(
-                        "65.00＄",
-                        style: TextStyle(color: Colors.white, fontSize: text * 40),
-                      ),
-                      SizedBox(
-                        height: height / 20,
-                      ),
-                      Container(
-                        height: height / 20,
-                        width: width / 2,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    height: height / 2.7,
+                    width: double.infinity,
+                    color: Colors.white,
+                  ),
+                  Container(
+                    height: height / 3.5,
+                    width: double.infinity,
+                    color: const Color(0XFF2EBBC3),
+                    child: Column(
+                      children: [
+                        Text(
+                          "Balance",
+                          style: TextStyle(color: Colors.white, fontSize: text * 13),
                         ),
-                        child: const Center(
-                          child: Text(
-                            "Deposit",
-                            style: TextStyle(
-                              color: Color(0xFF2EBBC3),
+                        Text(
+                          "65.00＄",
+                          style: TextStyle(color: Colors.white, fontSize: text * 40),
+                        ),
+                        SizedBox(
+                          height: height / 20,
+                        ),
+                        Container(
+                          height: height / 20,
+                          width: width / 2,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Deposit",
+                              style: TextStyle(
+                                color: Color(0xFF2EBBC3),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: height / 20,
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: height / 4,
-                    left: width / 10,
-                    right: width / 10,
-                  ),
-                  child: Container(
-                    height: height / 10,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(12),
+                        SizedBox(
+                          height: height / 20,
+                        ),
+                      ],
                     ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top: height / 4,
+                      left: width / 10,
+                      right: width / 10,
+                    ),
+                    child: Container(
+                      height: height / 10,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Row(
+                            children: [
+                              Image.asset("assets/images/bank card.png"),
+                              SizedBox(width: width / 24),
+                              const Text(
+                                "My card",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ],
+                          ),
+                          const VerticalDivider(
+                            thickness: 1,
+                          ),
+                          Row(
+                            children: [
+                              Image.asset("assets/images/coupon.png"),
+                              SizedBox(width: width / 24),
+                              const Text(
+                                "Coupon",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: width / 14,
+                  ),
+                  const Text(
+                    "Recent Transactions",
+                    style: TextStyle(
+                      color: Color(0XFFC7C7CC),
+                    ),
+                  ),
+                  SizedBox(
+                    width: width / 2.6,
+                  ),
+                  const Text(
+                    "view all",
+                    style: TextStyle(
+                      color: Color(0XFFC7C7CC),
+                    ),
+                  ),
+                  const Icon(
+                    Icons.navigate_next,
+                    color: Color(0XFFC7C7CC),
+                  ),
+                ],
+              ),
+              ListView.separated(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemBuilder: (context, index) => ListTile(
+                  title: Text(
+                    textdata[index],
+                  ),
+                  subtitle: Text(
+                    datedata[index],
+                  ),
+                  trailing: Container(
+                    width: 87,
+                    height: 50,
+                    alignment: Alignment.centerRight,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Row(
-                          children: [
-                            Image.asset("assets/images/bank card.png"),
-                            SizedBox(width: width / 24),
-                            const Text(
-                              "My card",
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ],
+                        Text(
+                          dollardata[index],
+                          style: TextStyle(
+                            color: index == 2 ? const Color(0xFF2EBBC3) : const Color(0xFFFF6D73),
+                          ),
                         ),
-                        const VerticalDivider(
-                          thickness: 1,
-                        ),
-                        Row(
-                          children: [
-                            Image.asset("assets/images/coupon.png"),
-                            SizedBox(width: width / 24),
-                            const Text(
-                              "Coupon",
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ],
+                        const Icon(
+                          Icons.navigate_next_outlined,
+                          color: Color(0XFFC7C7CC),
                         ),
                       ],
                     ),
                   ),
                 ),
-              ],
-            ),
-            Row(
-              children: [
-                SizedBox(
-                  width: width / 14,
-                ),
-                const Text(
-                  "Recent Transactions",
-                  style: TextStyle(
-                    color: Color(0XFFC7C7CC),
-                  ),
-                ),
-                SizedBox(
-                  width: width / 2.6,
-                ),
-                const Text(
-                  "view all",
-                  style: TextStyle(
-                    color: Color(0XFFC7C7CC),
-                  ),
-                ),
-                const Icon(
-                  Icons.navigate_next,
-                  color: Color(0XFFC7C7CC),
-                ),
-              ],
-            ),
-            Expanded(
-              child: ListView.separated(
-                shrinkWrap: true,
-                itemBuilder: (context, index) => ListTile(
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        textdata[index],
-                      ),
-                      Text(
-                        datedata[index],
-                      ),
-                    ],
-                  ),
-                  trailing: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        dollardata[index],
-                      ),
-                      Icon(Icons.navigate_next_outlined),
-                    ],
-                  ),
-                ),
-                separatorBuilder: (context, index) => Divider(),
+                separatorBuilder: (context, index) => const Divider(),
                 itemCount: textdata.length,
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
