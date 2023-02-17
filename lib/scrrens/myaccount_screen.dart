@@ -22,10 +22,10 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
     "A Family Affair",
   ];
   List<String> dollardata = [
-    "-＄5.50 ",
-    "-＄6.50",
-    "+＄80.00",
-    "-＄9.50",
+    "/-＄5.50 ",
+    "/-＄6.50",
+    "/+＄80.00",
+    "/-＄9.50",
   ];
   @override
   Widget build(BuildContext context) {
@@ -111,8 +111,31 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Image.asset("assets/images/bank card.png"),
+                        Row(
+                          children: [
+                            Image.asset("assets/images/bank card.png"),
+                            SizedBox(width: width / 24),
+                            const Text(
+                              "My card",
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ],
+                        ),
+                        const VerticalDivider(
+                          thickness: 1,
+                        ),
+                        Row(
+                          children: [
+                            Image.asset("assets/images/coupon.png"),
+                            SizedBox(width: width / 24),
+                            const Text(
+                              "Coupon",
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
@@ -142,8 +165,37 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                 const Icon(
                   Icons.navigate_next,
                   color: Color(0XFFC7C7CC),
-                )
+                ),
               ],
+            ),
+            Expanded(
+              child: ListView.separated(
+                shrinkWrap: true,
+                itemBuilder: (context, index) => ListTile(
+                  title: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        textdata[index],
+                      ),
+                      Text(
+                        datedata[index],
+                      ),
+                    ],
+                  ),
+                  trailing: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        dollardata[index],
+                      ),
+                      Icon(Icons.navigate_next_outlined),
+                    ],
+                  ),
+                ),
+                separatorBuilder: (context, index) => Divider(),
+                itemCount: textdata.length,
+              ),
             )
           ],
         ),
