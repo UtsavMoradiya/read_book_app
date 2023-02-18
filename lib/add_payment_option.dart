@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_credit_card/flutter_credit_card.dart';
+import 'package:flutter_credit_card/credit_card_widget.dart';
+import 'package:flutter_credit_card/glassmorphism_config.dart';
 
 class AddPayment extends StatefulWidget {
   const AddPayment({Key? key}) : super(key: key);
