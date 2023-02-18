@@ -14,7 +14,7 @@ class Button extends StatelessWidget {
           const Size(double.infinity, 40),
         ),
       ),
-      child: const Text("text button"),
+      child: Text("$text"),
     );
   }
 }

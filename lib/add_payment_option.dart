@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
+import 'package:read_book_app/common/button.dart';
 
 class AddPayment extends StatefulWidget {
-  const AddPayment({Key? key}) : super(key: key);
+  final String? text;
+  const AddPayment({Key? key, this.text}) : super(key: key);
 
   @override
   State<AddPayment> createState() => _AddPaymentState();
@@ -34,7 +36,7 @@ class _AddPaymentState extends State<AddPayment> {
                       SizedBox(
                         width: width / 5,
                       ),
-                      Text(
+                      const Text(
                         "Add A New Card",
                         style: TextStyle(
                           fontSize: 17,
@@ -51,14 +53,14 @@ class _AddPaymentState extends State<AddPayment> {
                   glassmorphismConfig: Glassmorphism(
                     blurX: 10.0,
                     blurY: 10.0,
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: <Color>[
                         Color(0xff2EBBC3),
                         Color(0xff2EBBC3),
                       ],
-                      stops: const <double>[
+                      stops: <double>[
                         0.3,
                         0,
                       ],
@@ -73,7 +75,7 @@ class _AddPaymentState extends State<AddPayment> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: width / 19),
-                  child: Text(
+                  child: const Text(
                     "Edit Card Details",
                     style: TextStyle(
                       color: Color(0xff8E8E93),
@@ -82,62 +84,164 @@ class _AddPaymentState extends State<AddPayment> {
                 ),
                 SizedBox(height: height / 40),
                 Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Container(
                     height: height / 3,
                     width: width / 1.2,
                     color: Colors.white,
                     child: Padding(
-                      padding: EdgeInsets.only(top: 10, bottom: 10),
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
-                            height: 60,
-                            width: 500,
-                            margin: EdgeInsets.only(left: 15, right: 15),
-                            decoration: BoxDecoration(
+                            height: height / 12,
+                            width: width,
+                            margin: const EdgeInsets.only(left: 15, right: 15),
+                            decoration: const BoxDecoration(
                               color: Color(0xffF1F2F3),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)),
                             ),
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                  top: height / 60,
+                                  left: width / 15,
+                                  right: width / 15),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                //mainAxisAlignment: MainAxisAlignment.spaceEvenly
+                                children: [
+                                  const Text(
+                                    'Card number',
+                                    style: TextStyle(
+                                      color: Color(0xffC7C7CC),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: height / 130,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        '6213 0683 5689 2358 ',
+                                        style: TextStyle(
+                                          color: const Color(0xff1B1B1B),
+                                          fontSize: text * 17,
+                                        ),
+                                      ),
+                                      // SizedBox(
+                                      //   width: 70,
+                                      // ),
+                                      Image.asset("assets/images/Scan.png"),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Container(
-                            height: 60,
-                            width: 500,
-                            margin: EdgeInsets.only(left: 15, right: 15),
-                            decoration: BoxDecoration(
+                            height: height / 13,
+                            width: width,
+                            margin: const EdgeInsets.only(left: 15, right: 15),
+                            decoration: const BoxDecoration(
                               color: Color(0xffF1F2F3),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)),
                             ),
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                  top: height / 60, left: width / 15),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                //mainAxisAlignment: MainAxisAlignment.spaceEvenly
+                                children: [
+                                  const Text(
+                                    'Card holder Name',
+                                    style: TextStyle(
+                                      color: Color(0xffC7C7CC),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: height / 130,
+                                  ),
+                                  Text(
+                                    'Alexandru Lucian',
+                                    style: TextStyle(
+                                      color: const Color(0xff1B1B1B),
+                                      fontSize: text * 17,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Row(
                             children: [
                               Container(
-                                height: 60,
-                                width: 140,
-                                margin: EdgeInsets.only(left: 15, right: 15),
-                                decoration: BoxDecoration(
+                                height: height / 14,
+                                width: width / 3,
+                                margin:
+                                    const EdgeInsets.only(left: 15, right: 15),
+                                decoration: const BoxDecoration(
                                   color: Color(0xffF1F2F3),
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10)),
                                 ),
+                                child: Padding(
+                                  padding: EdgeInsets.only(
+                                      top: height / 74, left: width / 17),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly
+                                    children: [
+                                      const Text(
+                                        'Expairy date',
+                                        style: TextStyle(
+                                          color: Color(0xffC7C7CC),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: height / 130,
+                                      ),
+                                      Text(
+                                        '05/21',
+                                        style: TextStyle(
+                                          color: const Color(0xff1B1B1B),
+                                          fontSize: text * 16,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ),
                               Container(
-                                height: 60,
-                                width: 140,
-                                margin: EdgeInsets.only(left: 15, right: 15),
-                                decoration: BoxDecoration(
+                                height: height / 14,
+                                width: width / 2.9,
+                                margin:
+                                    const EdgeInsets.only(left: 15, right: 15),
+                                decoration: const BoxDecoration(
                                   color: Color(0xffF1F2F3),
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10)),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    "CVV",
+                                    style: TextStyle(
+                                      color: const Color(0xffC7C7CC),
+                                      fontSize: text * 20,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],
@@ -146,7 +250,10 @@ class _AddPaymentState extends State<AddPayment> {
                       ),
                     ),
                   ),
-                )
+                ),
+                const Button(
+                  text: 'Done',
+                ),
               ],
             ),
           ),
