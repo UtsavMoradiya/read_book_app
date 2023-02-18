@@ -30,7 +30,9 @@ class _AddPaymentState extends State<AddPayment> {
                   padding: EdgeInsets.only(left: width / 35, right: width / 30),
                   child: Row(
                     children: [
-                      Image.asset("assets/images/back.png"),
+                      Image.asset(
+                        "assets/images/back.png",
+                      ),
                       SizedBox(
                         width: width / 5,
                       ),
