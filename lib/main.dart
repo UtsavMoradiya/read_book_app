@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:read_book_app/add_payment_option.dart';
+import 'package:read_book_app/scrrens/artical_page_screen.dart';
+import 'package:read_book_app/scrrens/write_a_comment_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: AddPayment(),
+      home: WriteACommentScreen(),
     );
   }
 }
