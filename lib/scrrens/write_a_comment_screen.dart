@@ -68,7 +68,7 @@ class _WriteACommentScreenState extends State<WriteACommentScreen> {
                   contentPadding: EdgeInsets.symmetric(vertical: 5),
                 ),
                 maxLines: 8,
-                minLines: 1,
+                minLines: 2,
               ),
             ),
           ],
