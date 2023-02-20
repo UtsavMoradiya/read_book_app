@@ -33,7 +33,7 @@ class _WriteACommentScreenState extends State<WriteACommentScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ArticalPageScreen(),
+                  builder: (context) => const ArticalPageScreen(),
                 ),
               );
             },
@@ -55,7 +55,7 @@ class _WriteACommentScreenState extends State<WriteACommentScreen> {
             Container(
               height: height / 11,
               width: double.infinity,
-              color:  Color(0xFFF1F2F3),
+              color:  const Color(0xFFF1F2F3),
               child: Image.asset("assets/images/5star.png"),
             ),
             Padding(
