@@ -55,7 +55,7 @@ class _WriteACommentScreenState extends State<WriteACommentScreen> {
             Container(
               height: height / 11,
               width: double.infinity,
-              color: const Color(0xFFF1F2F3),
+              color:  Color(0xFFF1F2F3),
               child: Image.asset("assets/images/5star.png"),
             ),
             Padding(
