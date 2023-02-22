@@ -52,7 +52,6 @@ class _WriteACommentScreenState extends State<WriteACommentScreen> {
         bottom: true,
         child: Column(
           children: [
-
             Container(
               height: height / 11,
               width: double.infinity,
