@@ -36,7 +36,7 @@ class _AddPaymentState extends State<AddPayment> {
                       SizedBox(
                         width: width / 5,
                       ),
-                      Text(
+                      const Text(
                         "Add A New Card",
                         style: TextStyle(
                           fontSize: 17,
@@ -53,14 +53,14 @@ class _AddPaymentState extends State<AddPayment> {
                   glassmorphismConfig: Glassmorphism(
                     blurX: 10.0,
                     blurY: 10.0,
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: <Color>[
                         Color(0xff2EBBC3),
                         Color(0xff2EBBC3),
                       ],
-                      stops: const <double>[
+                      stops: <double>[
                         0.3,
                         0,
                       ],
@@ -75,7 +75,7 @@ class _AddPaymentState extends State<AddPayment> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: width / 19),
-                  child: Text(
+                  child: const Text(
                     "Edit Card Details",
                     style: TextStyle(
                       color: Color(0xff8E8E93),
@@ -84,40 +84,38 @@ class _AddPaymentState extends State<AddPayment> {
                 ),
                 SizedBox(height: height / 40),
                 Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Container(
                     height: height / 3,
                     width: width / 1.2,
                     color: Colors.white,
                     child: Padding(
-                      padding: EdgeInsets.only(top: 10, bottom: 10),
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
                             height: 60,
                             width: 500,
-                            margin: EdgeInsets.only(left: 15, right: 15),
-                            decoration: BoxDecoration(
+                            margin: const EdgeInsets.only(left: 15, right: 15),
+                            decoration: const BoxDecoration(
                               color: Color(0xffF1F2F3),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Container(
                             height: 60,
                             width: 500,
-                            margin: EdgeInsets.only(left: 15, right: 15),
-                            decoration: BoxDecoration(
+                            margin: const EdgeInsets.only(left: 15, right: 15),
+                            decoration: const BoxDecoration(
                               color: Color(0xffF1F2F3),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Row(
@@ -125,21 +123,19 @@ class _AddPaymentState extends State<AddPayment> {
                               Container(
                                 height: 60,
                                 width: 140,
-                                margin: EdgeInsets.only(left: 15, right: 15),
-                                decoration: BoxDecoration(
+                                margin: const EdgeInsets.only(left: 15, right: 15),
+                                decoration: const BoxDecoration(
                                   color: Color(0xffF1F2F3),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10)),
+                                  borderRadius: BorderRadius.all(Radius.circular(10)),
                                 ),
                               ),
                               Container(
                                 height: 60,
                                 width: 140,
-                                margin: EdgeInsets.only(left: 15, right: 15),
-                                decoration: BoxDecoration(
+                                margin: const EdgeInsets.only(left: 15, right: 15),
+                                decoration: const BoxDecoration(
                                   color: Color(0xffF1F2F3),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10)),
+                                  borderRadius: BorderRadius.all(Radius.circular(10)),
                                 ),
                               ),
                             ],
