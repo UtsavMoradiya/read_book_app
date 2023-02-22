@@ -16,6 +16,13 @@ class _CoupenUnusedState extends State<CoupenUnused> {
     "20%",
   ];
   List data2 = ["Discount", "Discount", "Discount", "Discount", "Discount"];
+  List data3 = [
+    "assets/images/New.png",
+    "assets/images/New.png",
+    "assets/images/New.png",
+    "assets/images/New.png",
+    "assets/images/New.png",
+  ];
 
   Map student = {
     "data3": [
@@ -46,6 +53,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
       },
     ],
   };
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -57,132 +65,139 @@ class _CoupenUnusedState extends State<CoupenUnused> {
       child: Scaffold(
         body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.only(left: width / 18, right: width / 20),
-            child: SingleChildScrollView(
-              child: Container(
-                height: 750,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(height: height / 25),
-                    Padding(
-                      padding:
-                          EdgeInsets.only(left: width / 35, right: width / 30),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            "assets/images/back.png",
+            padding: EdgeInsets.only(left: width / 20, right: width / 22),
+            child: Container(
+              height: 800,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: height / 25),
+                  Padding(
+                    padding:
+                        EdgeInsets.only(left: width / 35, right: width / 30),
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          "assets/images/back.png",
+                        ),
+                        SizedBox(
+                          width: width / 5,
+                        ),
+                        const Text(
+                          "Coupen",
+                          style: TextStyle(
+                            fontSize: 17,
+                            // fontFamily: 'Roboto',
                           ),
-                          SizedBox(
-                            width: width / 5,
-                          ),
-                          const Text(
-                            "Coupen",
-                            style: TextStyle(
-                              fontSize: 17,
-                              // fontFamily: 'Roboto',
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      height: height / 40,
-                    ),
-                    Container(
-                      height: height / 25,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          border: Border.all(
-                            color: Color(0xff2EBBC3),
-                          )),
-                      child: TabBar(
-                        indicator: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                  SizedBox(
+                    height: height / 40,
+                  ),
+                  Container(
+                    height: height / 25,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        border: Border.all(
                           color: Color(0xff2EBBC3),
+                        )),
+                    child: TabBar(
+                      indicator: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        color: Color(0xff2EBBC3),
+                      ),
+                      tabs: [
+                        Tab(
+                          text: "Unused",
                         ),
-                        tabs: [
-                          Tab(
-                            text: "Unused",
+                        Tab(
+                          text: "used",
+                        ),
+                        Tab(
+                          text: "Expaired",
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: data.length,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) => Container(
+                        margin: EdgeInsets.all(15),
+                        height: height / 8,
+                        width: width / 10,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 1,
+                            color: Color(0xff2EBBC3),
                           ),
-                          Tab(
-                            text: "used",
-                          ),
-                          Tab(
-                            text: "Expaired",
-                          ),
-                        ],
+                          color: Colors.white,
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: height / 8,
+                              width: width / 3,
+                              color: Color(0xff2EBBC3),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text("${data[index]}",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: text * 30)),
+                                  Text("${data2[index]}",
+                                      style: TextStyle(color: Colors.white)),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Text(
+                                    student["data3"][index]["data1"],
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  Text(
+                                    student["data3"][index]["data2"],
+                                    style: TextStyle(
+                                        color: Color(0xff8E8E93),
+                                        fontSize: text * 12),
+                                  ),
+                                  Text(
+                                    student["data3"][index]["data3"],
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: text * 11),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Image.asset(
+                                  "${data3[index]}",
+                                  scale: 1.1,
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     ),
-                    Expanded(
-                      child: ListView.builder(
-                        itemCount: data.length,
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) => Container(
-                          margin: EdgeInsets.all(15),
-                          height: height / 8,
-                          width: width / 10,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              width: 1,
-                              color: Color(0xff2EBBC3),
-                            ),
-                            color: Colors.white,
-                          ),
-                          child: Row(
-                            children: [
-                              Container(
-                                height: height / 8,
-                                width: width / 3,
-                                color: Color(0xff2EBBC3),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text("${data[index]}",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: text * 30)),
-                                    Text("${data2[index]}",
-                                        style: TextStyle(color: Colors.white)),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 10),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Text(
-                                      student["data3"][index]["data1"],
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                    Text(
-                                      student["data3"][index]["data2"],
-                                      style: TextStyle(
-                                          color: Color(0xff8E8E93),
-                                          fontSize: text * 12),
-                                    ),
-                                    Text(
-                                      student["data3"][index]["data3"],
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: text * 11),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
+                  )
+                ],
               ),
             ),
           ),
