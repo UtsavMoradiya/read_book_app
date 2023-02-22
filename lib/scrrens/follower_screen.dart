@@ -41,7 +41,7 @@ class _FollowerScreenState extends State<FollowerScreen> {
                 ),
                 disabledBorder: InputBorder.none,
                 filled: true,
-                fillColor: Color(0XFFF1F2F3),
+                fillColor: const Color(0XFFF1F2F3),
                 contentPadding: const EdgeInsets.symmetric(vertical: 5),
               ),
             ),
