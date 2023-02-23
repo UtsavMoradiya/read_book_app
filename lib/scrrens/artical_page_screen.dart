@@ -43,6 +43,7 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
               GestureDetector(
                 onTap: () {
                   showModelBottom();
+                  alertDiloge();
                 },
                 child: const Icon(
                   Icons.ios_share_outlined,
@@ -121,7 +122,10 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
                 children: [
                   TextButton(
                     onPressed: () {},
-                    child: const Text("cancel",style: TextStyle(color: Colors.black),),
+                    child: const Text(
+                      "cancel",
+                      style: TextStyle(color: Colors.black),
+                    ),
                   ),
                   VerticalDivider(
                     color: Colors.grey.shade300,
@@ -129,7 +133,10 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
                   ),
                   TextButton(
                     onPressed: () {},
-                    child: const Text("share",style: TextStyle(color: Color(0xFF2EBBC3),)),
+                    child: const Text("share",
+                        style: TextStyle(
+                          color: Color(0xFF2EBBC3),
+                        )),
                   ),
                 ],
               ),
@@ -138,5 +145,9 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
         );
       },
     );
+  }
+
+  alertDiloge() {
+    alertDiloge();
   }
 }

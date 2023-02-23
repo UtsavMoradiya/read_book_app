@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:read_book_app/scrrens/alert_diloge_screen.dart';
 import 'package:read_book_app/scrrens/artical_page_screen.dart';
 import 'package:read_book_app/scrrens/coupen_unused.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ArticalPageScreen(),
+      home: AlertDilogeScreen(),
     );
   }
 }
