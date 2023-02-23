@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CoupenUnused extends StatefulWidget {
-  const CoupenUnused({Key? key}) : super(key: key);
+class CoupenUsed extends StatefulWidget {
+  const CoupenUsed({Key? key}) : super(key: key);
 
   @override
-  State<CoupenUnused> createState() => _CoupenUnusedState();
+  State<CoupenUsed> createState() => _CoupenUsedState();
 }
 
-class _CoupenUnusedState extends State<CoupenUnused> {
+class _CoupenUsedState extends State<CoupenUsed> {
   Map student = {
     "data3": [
       {
@@ -16,7 +16,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
         "data3": "Vailid until: 2019-05-04",
         "data4": "30%",
         "data5": "Discount",
-        "data6": "assets/images/New.png",
+        "data6": "assets/images/used.png",
       },
       {
         "data1": "New Book",
@@ -24,7 +24,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
         "data3": "Vailid until: 2019-05-04",
         "data4": "20%",
         "data5": "Discount",
-        "data6": "assets/images/New.png",
+        "data6": "assets/images/used.png",
       },
       {
         "data1": "New Book",
@@ -32,23 +32,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
         "data3": "Vailid until: 2019-05-04",
         "data4": "35%",
         "data5": "Discount",
-        "data6": "assets/images/New.png",
-      },
-      {
-        "data1": "New Book",
-        "data2": "30% discount on new books",
-        "data3": "Vailid until: 2019-05-04",
-        "data4": "45%",
-        "data5": "Discount",
-        "data6": "assets/images/New.png",
-      },
-      {
-        "data1": "New Book",
-        "data2": "30% discount on new books",
-        "data3": "Vailid until: 2019-05-04",
-        "data4": "30%",
-        "data5": "Discount",
-        "data6": "assets/images/New.png",
+        "data6": "assets/images/used.png",
       },
     ],
   };
@@ -80,7 +64,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                           "assets/images/back.png",
                         ),
                         SizedBox(
-                          width: width / 5,
+                          width: width / 3,
                         ),
                         Text(
                           "Coupen",
@@ -105,7 +89,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                         )),
                     child: TabBar(
                       indicator: BoxDecoration(
-                        // borderRadius: BorderRadius.all(Radius.circular(10)),
+                        // borderRadius: BorderRadius.all(Radius.circular(5)),
                         color: Color(0xff2EBBC3),
                       ),
                       tabs: [
@@ -133,7 +117,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                         decoration: BoxDecoration(
                           border: Border.all(
                             width: 1,
-                            color: Color(0xff2EBBC3),
+                            color: Color(0xffC9C9C9),
                           ),
                           color: Colors.white,
                         ),
@@ -142,7 +126,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                             Container(
                               height: height / 8,
                               width: width / 3,
-                              color: Color(0xff2EBBC3),
+                              color: Color(0xffC9C9C9),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -162,11 +146,22 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
                                 children: [
-                                  Text(
-                                    student["data3"][index]["data1"],
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                    ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        student["data3"][index]["data1"],
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 40,
+                                      ),
+                                      Image.asset(
+                                        student["data3"][index]["data6"],
+                                        scale: 1.5,
+                                      ),
+                                    ],
                                   ),
                                   Text(
                                     student["data3"][index]["data2"],
@@ -183,15 +178,17 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                                 ],
                               ),
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Image.asset(
-                                  student["data3"][index]["data6"],
-                                  scale: 1.1,
-                                ),
-                              ],
-                            )
+                            // Column(
+                            //   crossAxisAlignment: CrossAxisAlignment.end,
+                            //   children: [
+                            //     Padding(
+                            //       padding: EdgeInsets.only(right: 20),
+                            //       child: Image.asset(
+                            //         student["data3"][index]["data6"],
+                            //       ),
+                            //     ),
+                            //   ],
+                            // )
                           ],
                         ),
                       ),

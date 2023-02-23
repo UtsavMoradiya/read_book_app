@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CoupenUnused extends StatefulWidget {
-  const CoupenUnused({Key? key}) : super(key: key);
+class CoupenExpaired extends StatefulWidget {
+  const CoupenExpaired({Key? key}) : super(key: key);
 
   @override
-  State<CoupenUnused> createState() => _CoupenUnusedState();
+  State<CoupenExpaired> createState() => _CoupenExpairedState();
 }
 
-class _CoupenUnusedState extends State<CoupenUnused> {
+class _CoupenExpairedState extends State<CoupenExpaired> {
   Map student = {
     "data3": [
       {
@@ -16,7 +16,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
         "data3": "Vailid until: 2019-05-04",
         "data4": "30%",
         "data5": "Discount",
-        "data6": "assets/images/New.png",
+        "data6": "assets/images/Invalid.png",
       },
       {
         "data1": "New Book",
@@ -24,35 +24,10 @@ class _CoupenUnusedState extends State<CoupenUnused> {
         "data3": "Vailid until: 2019-05-04",
         "data4": "20%",
         "data5": "Discount",
-        "data6": "assets/images/New.png",
-      },
-      {
-        "data1": "New Book",
-        "data2": "30% discount on new books",
-        "data3": "Vailid until: 2019-05-04",
-        "data4": "35%",
-        "data5": "Discount",
-        "data6": "assets/images/New.png",
-      },
-      {
-        "data1": "New Book",
-        "data2": "30% discount on new books",
-        "data3": "Vailid until: 2019-05-04",
-        "data4": "45%",
-        "data5": "Discount",
-        "data6": "assets/images/New.png",
-      },
-      {
-        "data1": "New Book",
-        "data2": "30% discount on new books",
-        "data3": "Vailid until: 2019-05-04",
-        "data4": "30%",
-        "data5": "Discount",
-        "data6": "assets/images/New.png",
+        "data6": "assets/images/Invalid.png",
       },
     ],
   };
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -80,7 +55,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                           "assets/images/back.png",
                         ),
                         SizedBox(
-                          width: width / 5,
+                          width: width / 3,
                         ),
                         Text(
                           "Coupen",
@@ -105,7 +80,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                         )),
                     child: TabBar(
                       indicator: BoxDecoration(
-                        // borderRadius: BorderRadius.all(Radius.circular(10)),
+                        // borderRadius: BorderRadius.all(Radius.circular(5)),
                         color: Color(0xff2EBBC3),
                       ),
                       tabs: [
@@ -133,7 +108,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                         decoration: BoxDecoration(
                           border: Border.all(
                             width: 1,
-                            color: Color(0xff2EBBC3),
+                            color: Color(0xffC9C9C9),
                           ),
                           color: Colors.white,
                         ),
@@ -142,7 +117,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                             Container(
                               height: height / 8,
                               width: width / 3,
-                              color: Color(0xff2EBBC3),
+                              color: Color(0xffC9C9C9),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
