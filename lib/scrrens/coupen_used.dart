@@ -66,7 +66,7 @@ class _CoupenUsedState extends State<CoupenUsed> {
                         SizedBox(
                           width: width / 3,
                         ),
-                        Text(
+                        const Text(
                           "Coupen",
                           style: TextStyle(
                             fontSize: 18,
@@ -83,11 +83,12 @@ class _CoupenUsedState extends State<CoupenUsed> {
                     height: height / 25,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(5)),
                         border: Border.all(
-                          color: Color(0xff2EBBC3),
+                          color: const Color(0xff2EBBC3),
                         )),
-                    child: TabBar(
+                    child: const TabBar(
                       indicator: BoxDecoration(
                         // borderRadius: BorderRadius.all(Radius.circular(5)),
                         color: Color(0xff2EBBC3),
@@ -105,19 +106,19 @@ class _CoupenUsedState extends State<CoupenUsed> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Expanded(
                     child: ListView.builder(
                       itemCount: student["data3"].length,
                       shrinkWrap: true,
                       itemBuilder: (context, index) => Container(
-                        margin: EdgeInsets.all(15),
+                        margin: const EdgeInsets.all(15),
                         height: height / 8,
                         width: width / 10,
                         decoration: BoxDecoration(
                           border: Border.all(
                             width: 1,
-                            color: Color(0xffC9C9C9),
+                            color: const Color(0xffC9C9C9),
                           ),
                           color: Colors.white,
                         ),
@@ -126,7 +127,7 @@ class _CoupenUsedState extends State<CoupenUsed> {
                             Container(
                               height: height / 8,
                               width: width / 3,
-                              color: Color(0xffC9C9C9),
+                              color: const Color(0xffC9C9C9),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -135,12 +136,13 @@ class _CoupenUsedState extends State<CoupenUsed> {
                                           color: Colors.white,
                                           fontSize: text * 30)),
                                   Text(student["data3"][index]["data5"],
-                                      style: TextStyle(color: Colors.white)),
+                                      style:
+                                          const TextStyle(color: Colors.white)),
                                 ],
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 10),
+                              padding: const EdgeInsets.only(left: 10),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment:
@@ -150,11 +152,11 @@ class _CoupenUsedState extends State<CoupenUsed> {
                                     children: [
                                       Text(
                                         student["data3"][index]["data1"],
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           color: Colors.black,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 40,
                                       ),
                                       Image.asset(
@@ -166,7 +168,7 @@ class _CoupenUsedState extends State<CoupenUsed> {
                                   Text(
                                     student["data3"][index]["data2"],
                                     style: TextStyle(
-                                        color: Color(0xff8E8E93),
+                                        color: const Color(0xff8E8E93),
                                         fontSize: text * 12),
                                   ),
                                   Text(
