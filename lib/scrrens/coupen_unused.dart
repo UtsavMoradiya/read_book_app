@@ -73,8 +73,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                 children: [
                   SizedBox(height: height / 25),
                   Padding(
-                    padding:
-                        EdgeInsets.only(left: width / 35, right: width / 30),
+                    padding: EdgeInsets.only(left: width / 35, right: width / 30),
                     child: Row(
                       children: [
                         Image.asset(
@@ -100,11 +99,11 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                     height: height / 25,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderRadius: const BorderRadius.all(Radius.circular(10)),
                         border: Border.all(
-                          color: Color(0xff2EBBC3),
+                          color: const Color(0xff2EBBC3),
                         )),
-                    child: TabBar(
+                    child: const TabBar(
                       indicator: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         color: Color(0xff2EBBC3),
@@ -127,13 +126,13 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                       itemCount: data.length,
                       shrinkWrap: true,
                       itemBuilder: (context, index) => Container(
-                        margin: EdgeInsets.all(15),
+                        margin: const EdgeInsets.all(15),
                         height: height / 8,
                         width: width / 10,
                         decoration: BoxDecoration(
                           border: Border.all(
                             width: 1,
-                            color: Color(0xff2EBBC3),
+                            color: const Color(0xff2EBBC3),
                           ),
                           color: Colors.white,
                         ),
@@ -142,43 +141,34 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                             Container(
                               height: height / 8,
                               width: width / 3,
-                              color: Color(0xff2EBBC3),
+                              color: const Color(0xff2EBBC3),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text("${data[index]}",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: text * 30)),
-                                  Text("${data2[index]}",
-                                      style: TextStyle(color: Colors.white)),
+                                  Text("${data[index]}", style: TextStyle(color: Colors.white, fontSize: text * 30)),
+                                  Text("${data2[index]}", style: const TextStyle(color: Colors.white)),
                                 ],
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 10),
+                              padding: const EdgeInsets.only(left: 10),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 children: [
                                   Text(
                                     student["data3"][index]["data1"],
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Colors.black,
                                     ),
                                   ),
                                   Text(
                                     student["data3"][index]["data2"],
-                                    style: TextStyle(
-                                        color: Color(0xff8E8E93),
-                                        fontSize: text * 12),
+                                    style: TextStyle(color: const Color(0xff8E8E93), fontSize: text * 12),
                                   ),
                                   Text(
                                     student["data3"][index]["data3"],
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: text * 11),
+                                    style: TextStyle(color: Colors.black, fontSize: text * 11),
                                   ),
                                 ],
                               ),

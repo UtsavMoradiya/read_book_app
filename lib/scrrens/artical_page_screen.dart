@@ -34,8 +34,7 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
           ],
         ),
         title: const Center(
-          child: Text("The pieces we kee...",
-              style: TextStyle(color: Colors.black, fontSize: 18)),
+          child: Text("The pieces we kee...", style: TextStyle(color: Colors.black, fontSize: 18)),
         ),
         elevation: 0,
         actions: [
@@ -51,9 +50,15 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
                     ),
                   );
                 },
-                child: const Icon(
-                  Icons.ios_share_outlined,
-                  color: Color(0xFF2EBBC3),
+                child: GestureDetector(
+                  onTap: () {
+                    showModdole();
+                    containerS();
+                  },
+                  child: const Icon(
+                    Icons.ios_share_outlined,
+                    color: Color(0xFF2EBBC3),
+                  ),
                 ),
               ),
               SizedBox(width: width / 25),
@@ -150,6 +155,71 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
           ),
         );
       },
+    );
+  }
+
+  showModdole() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Container(
+          height: 160,
+          width: double.infinity,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Image.asset("assets/images/pic-1.png"),
+                  Image.asset("assets/images/pic-2.png"),
+                  Image.asset("assets/images/pic-3.png"),
+                ],
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Divider(
+                height: 1,
+                color: Colors.grey.shade300,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "cancel",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  VerticalDivider(
+                    color: Colors.grey.shade300,
+                    width: 1,
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text("share",
+                        style: TextStyle(
+                          color: Color(0xFF2EBBC3),
+                        )),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  containerS() {
+    Container(
+      height: 100,
+      width: 100,
+      color: Colors.black,
     );
   }
 }

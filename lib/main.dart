@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:read_book_app/scrrens/alert_diloge_screen.dart';
 import 'package:read_book_app/scrrens/artical_page_screen.dart';
 import 'package:read_book_app/scrrens/coupen_unused.dart';
+import 'package:read_book_app/scrrens/follower_screen.dart';
+import 'package:read_book_app/scrrens/mybookself_screen.dart';
+import 'package:read_book_app/scrrens/readingrecord_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ArticalPageScreen(),
+      home: const ArticalPageScreen(),
     );
   }
 }
