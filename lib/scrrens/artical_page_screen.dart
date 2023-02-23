@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:read_book_app/scrrens/alert_diloge_screen.dart';
 
 class ArticalPageScreen extends StatefulWidget {
   const ArticalPageScreen({Key? key}) : super(key: key);
@@ -43,7 +44,12 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
               GestureDetector(
                 onTap: () {
                   showModelBottom();
-                  alertDiloge();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AlertDilogeScreen(),
+                    ),
+                  );
                 },
                 child: const Icon(
                   Icons.ios_share_outlined,
@@ -145,9 +151,5 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
         );
       },
     );
-  }
-
-  alertDiloge() {
-    alertDiloge();
   }
 }
