@@ -10,25 +10,38 @@ class FollowerScreen extends StatefulWidget {
 class _FollowerScreenState extends State<FollowerScreen> {
   bool colourChang = false;
 
-  List<String> imageData = [
-    "assets/images/dannyrise.png",
-    "assets/images/eachalann.png",
-    "assets/images/Betty Schwartz.png",
-    "assets/images/Sean Potter.png",
-    "assets/images/Eugenia.png",
-    "assets/images/Jeffrey.png",
-    "assets/images/Jane Allen.png",
-  ];
-
-  List<String> textData = [
-    "Danny Rice",
-    "Rachel Ann",
-    "Betty Schwartz",
-    "Sean Potter",
-    "Eugenia",
-    "Jeffrey",
-    "Jane Allen",
-  ];
+  Map data = {
+    "data": [
+      {
+        "data1": "assets/images/dannyrise.png",
+        "data2": "Danny Rice",
+      },
+      {
+        "data1": "assets/images/eachalann.png",
+        "data2": "Rachel Ann",
+      },
+      {
+        "data1": "assets/images/Betty Schwartz.png",
+        "data2": "Betty Schwartz",
+      },
+      {
+        "data1": "assets/images/Sean Potter.png",
+        "data2": "Sean Potter",
+      },
+      {
+        "data1": "assets/images/Eugenia.png",
+        "data2": "Eugenia",
+      },
+      {
+        "data1": "assets/images/Jeffrey.png",
+        "data2": "Jeffrey",
+      },
+      {
+        "data1": "assets/images/Jane Allen.png",
+        "data2": "Jane Allen",
+      },
+    ],
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -78,10 +91,12 @@ class _FollowerScreenState extends State<FollowerScreen> {
           ),
           Expanded(
             child: ListView.separated(
-              itemCount: imageData.length,
+              itemCount: data.length,
               itemBuilder: (context, index) => ListTile(
-                leading: Image.asset(imageData[index]),
-                title: Text(textData[index]),
+                leading: Image.asset(
+                  data["data"][index]["data1"],
+                ),
+                title: Text(data["data"][index]["data2"]),
                 trailing: GestureDetector(
                   onTap: () {
                     setState(() {
@@ -92,16 +107,16 @@ class _FollowerScreenState extends State<FollowerScreen> {
                     height: height / 32,
                     width: width / 5.5,
                     decoration: BoxDecoration(
-                      color: colourChang ? Colors.grey.shade300 : Color(0xFF2EBBC3),
+                      color: colourChang ? Colors.grey.shade300 : const Color(0xFF2EBBC3),
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Center(
                         child: colourChang
-                            ? Text(
+                            ? const Text(
                                 "unfollow",
                                 style: TextStyle(color: Colors.grey),
                               )
-                            : Text(
+                            : const Text(
                                 "folllow",
                                 style: TextStyle(color: Colors.white),
                               )),
