@@ -245,7 +245,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       SizedBox(
                         height: height / 80,
                       ),
-                      const Text(
+                       Text(
                         "A Dream to...",
                         style: TextStyle(fontSize: 16),
                       ),
