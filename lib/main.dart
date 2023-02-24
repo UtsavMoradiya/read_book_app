@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:read_book_app/scrrens/coupen_used.dart';
+import 'package:read_book_app/scrrens/transaction_record.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CoupenUsed(),
+      home: TransactionRecord(),
     );
   }
 }
