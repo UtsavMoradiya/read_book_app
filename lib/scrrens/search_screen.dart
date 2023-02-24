@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_sound/flutter_sound.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -32,7 +30,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Future initRecorder() async {
     final status = await Permission.microphone.request();
 
-    if(status != PermissionStatus.granted) {
+    if (status != PermissionStatus.granted) {
       throw 'Microphone permission not granted';
     }
     await recorder.openRecorder();
@@ -70,8 +68,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   Container(
                     width: width / 1.5,
                     height: height / 20,
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
                     child: TextField(
                       decoration: InputDecoration(
                         prefixIcon: const Icon(Icons.search),
@@ -300,6 +297,14 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                 ],
               ),
+              StreamBuilder<RecordingDisposition>(
+                stream: recorder.onProgress,
+                builder: (context, snapshot) {
+                  final duration = snapshot.hasData ? snapshot.data!.duration : Duration.zero;
+
+                  return Text("${duration.inSeconds}");
+                },
+              ),
               Center(
                 child: ElevatedButton(
                   onPressed: () async {
@@ -310,7 +315,9 @@ class _SearchScreenState extends State<SearchScreen> {
                     }
                     setState(() {});
                   },
-                  child: const Icon(Icons.mic),
+                  child: Icon(
+                    recorder.isRecording ? Icons.stop : Icons.mic,
+                  ),
                 ),
               ),
             ],

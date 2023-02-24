@@ -8,37 +8,42 @@ class FollowerScreen extends StatefulWidget {
 }
 
 class _FollowerScreenState extends State<FollowerScreen> {
-  bool colourChang = false;
-
   Map data = {
     "data": [
       {
         "data1": "assets/images/dannyrise.png",
         "data2": "Danny Rice",
+        "data3": false,
       },
       {
         "data1": "assets/images/eachalann.png",
         "data2": "Rachel Ann",
+        "data3": false,
       },
       {
         "data1": "assets/images/Betty Schwartz.png",
         "data2": "Betty Schwartz",
+        "data3": false,
       },
       {
         "data1": "assets/images/Sean Potter.png",
         "data2": "Sean Potter",
+        "data3": false,
       },
       {
         "data1": "assets/images/Eugenia.png",
         "data2": "Eugenia",
+        "data3": false,
       },
       {
         "data1": "assets/images/Jeffrey.png",
         "data2": "Jeffrey",
+        "data3": false,
       },
       {
         "data1": "assets/images/Jane Allen.png",
         "data2": "Jane Allen",
+        "data3": false,
       },
     ],
   };
@@ -91,7 +96,7 @@ class _FollowerScreenState extends State<FollowerScreen> {
           ),
           Expanded(
             child: ListView.separated(
-              itemCount: data.length,
+              itemCount: data["data"].length,
               itemBuilder: (context, index) => ListTile(
                 leading: Image.asset(
                   data["data"][index]["data1"],
@@ -100,18 +105,18 @@ class _FollowerScreenState extends State<FollowerScreen> {
                 trailing: GestureDetector(
                   onTap: () {
                     setState(() {
-                      colourChang = !colourChang;
+                      data["data"][index]["data3"] = !data["data"][index]["data3"];
                     });
                   },
                   child: Container(
                     height: height / 32,
                     width: width / 5.5,
                     decoration: BoxDecoration(
-                      color: colourChang ? Colors.grey.shade300 : const Color(0xFF2EBBC3),
+                      color: data["data"][index]["data3"] ? Colors.grey.shade300 : const Color(0xFF2EBBC3),
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Center(
-                        child: colourChang
+                        child: data["data"][index]["data3"]
                             ? const Text(
                                 "unfollow",
                                 style: TextStyle(color: Colors.grey),

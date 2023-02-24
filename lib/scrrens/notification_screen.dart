@@ -9,41 +9,81 @@ class NotificationScreen extends StatefulWidget {
 }
 
 class _NotificationScreenState extends State<NotificationScreen> {
-  List<String> icondata = [
-    "assets/images/notificationicon.png",
-    "assets/images/likeicon.png",
-    "assets/images/commenticon.png",
-    "assets/images/dollaricon.png",
-    "assets/images/dollaricon.png",
-  ];
-  List<String> icondataone = [
-    "assets/images/three.png",
-    "assets/images/nine.png",
-    "assets/images/seven.png",
-    "assets/images/seven.png",
-    "assets/images/eight.png",
-  ];
-  List<String> textdata = [
-    "System notification",
-    "Like",
-    "Comment",
-    "Promotions",
-    "Followers",
-  ];
-  List<String> textdataone = [
-    "Tienes un adudo pendiente por ...",
-    "Thomas Pageot like your comment",
-    "Oleg Milshtein replied your comment",
-    "Oleg Milshtein Replied your comment",
-    "Dann Petty start follow you",
-  ];
-  List<String> textdatatwo = [
-    "2019-03-24",
-    "2019-02-05",
-    "O2019-04-18",
-    "2018-10-25",
-    "2018-09-28",
-  ];
+  Map data = {
+    "data": [
+      {
+        "data1": "assets/images/notificationicon.png",
+        "data2": "assets/images/three.png",
+        "data3": "System notification",
+        "data4": "Tienes un adudo pendiente por ...",
+        "data5": "2019-03-24",
+      },
+      {
+        "data1": "assets/images/likeicon.png",
+        "data2": "assets/images/nine.png",
+        "data3": "Like",
+        "data4": "Thomas Pageot like your comment",
+        "data5": "2019-02-05",
+      },
+      {
+        "data1": "assets/images/commenticon.png",
+        "data2": "assets/images/seven.png",
+        "data3": "Comment",
+        "data4": "Oleg Milshtein replied your comment",
+        "data5": "O2019-04-18",
+      },
+      {
+        "data1": "assets/images/dollaricon.png",
+        "data2": "assets/images/seven.png",
+        "data3": "Promotions",
+        "data4": "Oleg Milshtein Replied your comment",
+        "data5": "2018-10-25",
+      },
+      {
+        "data1": "assets/images/dollaricon.png",
+        "data2": "assets/images/eight.png",
+        "data3": "Followers",
+        "data4": "Dann Petty start follow you",
+        "data5": "2018-09-28",
+      },
+    ],
+  };
+  //
+  // List<String> icondata = [
+  //   "assets/images/notificationicon.png",
+  //   "assets/images/likeicon.png",
+  //   "assets/images/commenticon.png",
+  //   "assets/images/dollaricon.png",
+  //   "assets/images/dollaricon.png",
+  // ];
+  // List<String> icondataone = [
+  //   "assets/images/three.png",
+  //   "assets/images/nine.png",
+  //   "assets/images/seven.png",
+  //   "assets/images/seven.png",
+  //   "assets/images/eight.png",
+  // ];
+  // List<String> textdata = [
+  //   "System notification",
+  //   "Like",
+  //   "Comment",
+  //   "Promotions",
+  //   "Followers",
+  // ];
+  // List<String> textdataone = [
+  //   "Tienes un adudo pendiente por ...",
+  //   "Thomas Pageot like your comment",
+  //   "Oleg Milshtein replied your comment",
+  //   "Oleg Milshtein Replied your comment",
+  //   "Dann Petty start follow you",
+  // ];
+  // List<String> textdatatwo = [
+  //   "2019-03-24",
+  //   "2019-02-05",
+  //   "O2019-04-18",
+  //   "2018-10-25",
+  //   "2018-09-28",
+  // ];
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +106,10 @@ class _NotificationScreenState extends State<NotificationScreen> {
               "Edit",
               style: TextStyle(color: const Color(0Xff2EBBC3), fontSize: text * 20),
             ),
-          )
+          ),
+          SizedBox(
+            width: width / 25,
+          ),
         ],
         centerTitle: true,
         title: const Text(
@@ -77,36 +120,47 @@ class _NotificationScreenState extends State<NotificationScreen> {
       body: SafeArea(
         top: true,
         bottom: true,
-        child: ListView.builder(
-          itemCount: textdata.length,
+        child: ListView.separated(
+          shrinkWrap: true,
+          itemCount: data["data"].length,
           itemBuilder: (context, index) => ListTile(
-            leading: Image.asset(icondata[index]),
+            leading: Image.asset(
+              data["data"][index]["data1"],
+            ),
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   height: height / 90,
                 ),
-                Text(textdata[index]),
+                Text(
+                  data["data"][index]["data3"],
+                ),
                 SizedBox(
                   height: height / 90,
                 ),
                 Text(
-                  textdataone[index],
+                  data["data"][index]["data4"],
                   style: const TextStyle(color: Color(0xFF8E8E93)),
                 ),
                 SizedBox(
                   height: height / 60,
                 ),
                 Text(
-                  textdatatwo[index],
+                  data["data"][index]["data5"],
                   style: const TextStyle(color: Color(0xFFC7C7CC)),
                 ),
               ],
             ),
-            trailing: Image.asset(
-              icondataone[index],
-            ),
+            trailing: index == 3
+                ? Text("")
+                : Image.asset(
+                    data["data"][index]["data2"],
+                  ),
+          ),
+          separatorBuilder: (context, index) => Divider(
+            endIndent: 30,
+            indent: 70,
           ),
         ),
       ),
