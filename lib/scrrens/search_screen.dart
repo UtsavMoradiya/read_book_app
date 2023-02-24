@@ -1,4 +1,8 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_sound/flutter_sound.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -8,6 +12,40 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
+  final recorder = FlutterSoundRecorder();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    initRecorder();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    recorder.closeRecorder();
+    super.dispose();
+  }
+
+  Future initRecorder() async {
+    final status = await Permission.microphone.request();
+
+    if(status != PermissionStatus.granted) {
+      throw 'Microphone permission not granted';
+    }
+    await recorder.openRecorder();
+  }
+
+  Future record() async {
+    await recorder.startRecorder(toFile: 'audio');
+  }
+
+  Future stop() async {
+    await recorder.stopRecorder();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -78,7 +116,6 @@ class _SearchScreenState extends State<SearchScreen> {
                 ],
               ),
               SizedBox(height: height / 22),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -245,7 +282,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       SizedBox(
                         height: height / 80,
                       ),
-                       Text(
+                      const Text(
                         "A Dream to...",
                         style: TextStyle(fontSize: 16),
                       ),
@@ -262,6 +299,19 @@ class _SearchScreenState extends State<SearchScreen> {
                     ],
                   ),
                 ],
+              ),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () async {
+                    if (recorder.isRecording) {
+                      await stop();
+                    } else {
+                      await record();
+                    }
+                    setState(() {});
+                  },
+                  child: const Icon(Icons.mic),
+                ),
               ),
             ],
           ),
