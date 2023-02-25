@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:read_book_app/scrrens/alert_diloge_screen.dart';
 
 class ArticalPageScreen extends StatefulWidget {
   const ArticalPageScreen({Key? key}) : super(key: key);
@@ -18,19 +19,56 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFFFFFFF),
-        leading: Icon(
-          Icons.arrow_back_sharp,
-          color: Colors.grey.shade800,
+        leading: Row(
+          children: [
+            const SizedBox(width: 3),
+            Icon(
+              Icons.arrow_back_sharp,
+              color: Colors.grey.shade800,
+            ),
+            const SizedBox(width: 5),
+            const Icon(
+              Icons.dehaze_rounded,
+              color: Color(0xFF2EBBC3),
+            ),
+          ],
         ),
         title: const Center(
-            child: Text("The pieces we kee...",
-                style: TextStyle(color: Colors.black, fontSize: 18))),
+          child: Text("The pieces we kee...", style: TextStyle(color: Colors.black, fontSize: 18)),
+        ),
         elevation: 0,
         actions: [
-          const Icon(
-            Icons.settings,
-            color: Color(0xFF2EBBC3),
-          )
+          Row(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  showModelBottom();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AlertDilogeScreen(),
+                    ),
+                  );
+                },
+                child: GestureDetector(
+                  onTap: () {
+                    showModdole();
+                    containerS();
+                  },
+                  child: const Icon(
+                    Icons.ios_share_outlined,
+                    color: Color(0xFF2EBBC3),
+                  ),
+                ),
+              ),
+              SizedBox(width: width / 25),
+              const Icon(
+                Icons.settings,
+                color: Color(0xFF2EBBC3),
+              ),
+              SizedBox(width: width / 25),
+            ],
+          ),
         ],
       ),
       body: SafeArea(
@@ -59,6 +97,129 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  showModelBottom() {
+    showModalBottomSheet(
+      context: context,
+      // isDismissible: false,
+      builder: (context) {
+        return Container(
+          height: 160,
+          width: double.infinity,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Image.asset("assets/images/pic-1.png"),
+                  Image.asset("assets/images/pic-2.png"),
+                  Image.asset("assets/images/pic-3.png"),
+                ],
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Divider(
+                height: 1,
+                color: Colors.grey.shade300,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "cancel",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  VerticalDivider(
+                    color: Colors.grey.shade300,
+                    width: 1,
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text("share",
+                        style: TextStyle(
+                          color: Color(0xFF2EBBC3),
+                        )),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  showModdole() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Container(
+          height: 160,
+          width: double.infinity,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Image.asset("assets/images/pic-1.png"),
+                  Image.asset("assets/images/pic-2.png"),
+                  Image.asset("assets/images/pic-3.png"),
+                ],
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Divider(
+                height: 1,
+                color: Colors.grey.shade300,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "cancel",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  VerticalDivider(
+                    color: Colors.grey.shade300,
+                    width: 1,
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text("share",
+                        style: TextStyle(
+                          color: Color(0xFF2EBBC3),
+                        )),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  containerS() {
+    Container(
+      height: 100,
+      width: 100,
+      color: Colors.black,
     );
   }
 }
