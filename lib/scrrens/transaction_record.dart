@@ -114,19 +114,19 @@ class _TransactionRecordState extends State<TransactionRecord> {
                             Text(
                               data["database"][index]["data2"],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 7,
                             ),
                             Text(
                               data["database"][index]["data3"],
-                              style: TextStyle(color: Color(0xffC7C7CC)),
+                              style: const TextStyle(color: Color(0xffC7C7CC)),
                             ),
                           ],
                         ),
                         Text(
                           data["database"][index]["data4"],
-                          style:
-                              TextStyle(color: Color(0xff8E8E93), fontSize: 18),
+                          style: const TextStyle(
+                              color: Color(0xff8E8E93), fontSize: 18),
                         )
                       ],
                     ),
