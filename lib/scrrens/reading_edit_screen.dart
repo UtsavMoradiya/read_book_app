@@ -1,55 +1,58 @@
 import 'package:flutter/material.dart';
-import 'package:read_book_app/scrrens/reading_edit_screen.dart';
 
-class ReadingScreen extends StatefulWidget {
-  const ReadingScreen({Key? key}) : super(key: key);
+class ReadingEditScreen extends StatefulWidget {
+  const ReadingEditScreen({Key? key}) : super(key: key);
 
   @override
-  State<ReadingScreen> createState() => _ReadingScreenState();
+  State<ReadingEditScreen> createState() => _ReadingEditScreenState();
 }
 
-class _ReadingScreenState extends State<ReadingScreen> {
+class _ReadingEditScreenState extends State<ReadingEditScreen> {
   Map data = {
     "data": [
       {
         "data1": "assets/images/mask0.png",
-        "data2": "Mary Alice Monroe-the beach\nhouse",
+        "data2": "Mary Alice Monroe-the\nbeach house",
         "data3": "By Mary Alice ",
         "data4": "assets/images/5star.png",
         "data5": "2.3k",
         "data6": "assets/images/hartimage.png",
         "data7": "assets/images/comment.png",
         "data8": "265",
+        "data9": false,
       },
       {
         "data1": "assets/images/mask1.png",
-        "data2": "The Life-Changing Magic of\nTidying Up",
+        "data2": "The Life-Changing\nMagic of Tidying Up",
         "data3": "By Marie Kondō ",
         "data4": "assets/images/4star.png",
         "data5": "4.2k",
         "data6": "assets/images/hartimage.png",
         "data7": "assets/images/comment.png",
         "data8": "458",
+        "data9": false,
       },
       {
         "data1": "assets/images/mask2.png",
-        "data2": "Sold on a Monday: A Novel",
+        "data2": "Sold on a Monday:\nA Novel",
         "data3": "By Kristina McMorris ",
         "data4": "assets/images/4star.png",
         "data5": "3.8k",
         "data6": "assets/images/hartimage.png",
         "data7": "assets/images/comment.png",
         "data8": "178",
+        "data9": false,
       },
       {
         "data1": "assets/images/mask7.png",
-        "data2": "Contagious: Why Things\nCatch On",
+        "data2": "Contagious: Why\nThings Catch On",
         "data3": "By Kristina McMorris ",
         "data4": "assets/images/4star.png",
         "data5": "738",
         "data6": "assets/images/hartimage.png",
         "data7": "assets/images/comment.png",
         "data8": "25",
+        "data9": false,
       },
     ],
   };
@@ -61,13 +64,30 @@ class _ReadingScreenState extends State<ReadingScreen> {
     double height = size.height;
     double text = MediaQuery.of(context).textScaleFactor;
 
+    Color getColor(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      if (states.any(interactiveStates.contains)) {
+        return Colors.red;
+      }
+      return Colors.blue;
+    }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Colors.black,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
         ),
         centerTitle: true,
         title: const Text(
@@ -79,16 +99,9 @@ class _ReadingScreenState extends State<ReadingScreen> {
         ),
         actions: [
           TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ReadingEditScreen(),
-                ),
-              );
-            },
+            onPressed: () {},
             child: const Text(
-              "Edit",
+              "All",
               style: TextStyle(
                 color: Color(0xFF2EBBC3),
                 fontSize: 17,
@@ -110,6 +123,18 @@ class _ReadingScreenState extends State<ReadingScreen> {
                   width: double.infinity,
                   child: Row(
                     children: [
+                      Checkbox(
+                        checkColor: Color(0xFFFFFFFF),
+                        fillColor: MaterialStateProperty.resolveWith(
+                          (states) => getColor(states),
+                        ),
+                        value: data["data"][index]["data9"],
+                        onChanged: (bool? value) {
+                          setState(() {
+                            data["data"][index]["data9"] = value!;
+                          });
+                        },
+                      ),
                       Image.asset(
                         data["data"][index]["data1"],
                         height: height / 5,
