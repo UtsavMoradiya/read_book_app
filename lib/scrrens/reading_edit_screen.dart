@@ -124,7 +124,7 @@ class _ReadingEditScreenState extends State<ReadingEditScreen> {
                   child: Row(
                     children: [
                       Checkbox(
-                        checkColor: Color(0xFFFFFFFF),
+                        checkColor: const Color(0xFFFFFFFF),
                         fillColor: MaterialStateProperty.resolveWith(
                           (states) => getColor(states),
                         ),
