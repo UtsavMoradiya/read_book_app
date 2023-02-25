@@ -4,6 +4,7 @@ import 'package:read_book_app/scrrens/coupen_unused.dart';
 import 'package:read_book_app/scrrens/follower_screen.dart';
 import 'package:read_book_app/scrrens/mybookself_screen.dart';
 import 'package:read_book_app/scrrens/notification_screen.dart';
+import 'package:read_book_app/scrrens/reading_screen.dart';
 import 'package:read_book_app/scrrens/readingrecord_screen.dart';
 import 'package:read_book_app/scrrens/search_screen.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FollowerScreen(),
+      home: const ReadingScreen(),
     );
   }
 }

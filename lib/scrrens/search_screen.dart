@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sound/flutter_sound.dart';
-import 'package:permission_handler/permission_handler.dart';
+// import 'package:flutter_sound/flutter_sound.dart';
+// import 'package:permission_handler/permission_handler.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -10,39 +10,39 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  final recorder = FlutterSoundRecorder();
+  // final recorder = FlutterSoundRecorder();
 
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-
-    initRecorder();
-  }
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //
+  //   initRecorder();
+  // }
 
   @override
-  void dispose() {
-    // TODO: implement dispose
-    recorder.closeRecorder();
-    super.dispose();
-  }
+  // void dispose() {
+  //   // TODO: implement dispose
+  //   recorder.closeRecorder();
+  //   super.dispose();
+  // }
 
-  Future initRecorder() async {
-    final status = await Permission.microphone.request();
+  // Future initRecorder() async {
+  //   final status = await Permission.microphone.request();
+  //
+  //   if (status != PermissionStatus.granted) {
+  //     throw 'Microphone permission not granted';
+  //   }
+  //   await recorder.openRecorder();
+  // }
 
-    if (status != PermissionStatus.granted) {
-      throw 'Microphone permission not granted';
-    }
-    await recorder.openRecorder();
-  }
-
-  Future record() async {
-    await recorder.startRecorder(toFile: 'audio');
-  }
-
-  Future stop() async {
-    await recorder.stopRecorder();
-  }
+  // Future record() async {
+  //   await recorder.startRecorder(toFile: 'audio');
+  // }
+  //
+  // Future stop() async {
+  //   await recorder.stopRecorder();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +68,8 @@ class _SearchScreenState extends State<SearchScreen> {
                   Container(
                     width: width / 1.5,
                     height: height / 20,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(10)),
                     child: TextField(
                       decoration: InputDecoration(
                         prefixIcon: const Icon(Icons.search),
@@ -297,26 +298,19 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                 ],
               ),
-              StreamBuilder<RecordingDisposition>(
-                stream: recorder.onProgress,
-                builder: (context, snapshot) {
-                  final duration = snapshot.hasData ? snapshot.data!.duration : Duration.zero;
-
-                  return Text("${duration.inSeconds}");
-                },
-              ),
+              // StreamBuilder<RecordingDisposition>(
+              //   stream: recorder.onProgress,
+              //   builder: (context, snapshot) {
+              //     final duration = snapshot.hasData ? snapshot.data!.duration : Duration.zero;
+              //
+              //     return Text("${duration.inSeconds}");
+              //   },
+              // ),
               Center(
                 child: ElevatedButton(
-                  onPressed: () async {
-                    if (recorder.isRecording) {
-                      await stop();
-                    } else {
-                      await record();
-                    }
-                    setState(() {});
-                  },
-                  child: Icon(
-                    recorder.isRecording ? Icons.stop : Icons.mic,
+                  onPressed: () async {},
+                  child: const Icon(
+                    Icons.mic,
                   ),
                 ),
               ),
