@@ -9,6 +9,31 @@ class MyaccountScreen extends StatefulWidget {
 }
 
 class _MyaccountScreenState extends State<MyaccountScreen> {
+  Map data = {
+    "data": [
+      {
+        "data1": "A Mother Like Mine ",
+        "data2": "17 Feb 2019 ",
+        "data3": "/-＄5.50 ",
+      },
+      {
+        "data1": "Orphan Train Trials",
+        "data2": "24 Dec 2018",
+        "data3": "/-＄6.50",
+      },
+      {
+        "data1": "Daughters of War",
+        "data2": "14 Jun 2018",
+        "data3": "/+＄80.00",
+      },
+      {
+        "data1": "A Family Affair",
+        "data2": "23 Mar 2018",
+        "data3": "/-＄9.50",
+      },
+    ],
+  };
+
   List<String> textdata = [
     "A Mother Like Mine ",
     "Orphan Train Trials",
@@ -174,20 +199,16 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemBuilder: (context, index) => ListTile(
-                  title: Text(
-                    textdata[index],
-                  ),
-                  subtitle: Text(
-                    datedata[index],
-                  ),
+                  title: Text(data["data"][index]["data1"]),
+                  subtitle: Text(data["data"][index]["data2"]),
                   trailing: Container(
-                    width: 87,
+                    width: width / 3.8,
                     height: 50,
                     alignment: Alignment.centerRight,
                     child: Row(
                       children: [
                         Text(
-                          dollardata[index],
+                          data["data"][index]["data2"],
                           style: TextStyle(
                             color: index == 2 ? const Color(0xFF2EBBC3) : const Color(0xFFFF6D73),
                           ),
@@ -201,7 +222,7 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                   ),
                 ),
                 separatorBuilder: (context, index) => const Divider(),
-                itemCount: textdata.length,
+                itemCount: data["data"].length,
               )
             ],
           ),

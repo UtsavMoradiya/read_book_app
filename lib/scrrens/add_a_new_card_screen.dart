@@ -16,7 +16,7 @@ class _AddANewCardScreenState extends State<AddANewCardScreen> {
     double text = MediaQuery.of(context).textScaleFactor;
 
     return Scaffold(
-      backgroundColor: Color(0xFFF1F2F3),
+      backgroundColor: const Color(0xFFF1F2F3),
       body: SafeArea(
         top: true,
         bottom: true,

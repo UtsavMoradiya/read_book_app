@@ -8,31 +8,41 @@ class CommentScreen extends StatefulWidget {
 }
 
 class _CommentScreenState extends State<CommentScreen> {
-  List<String> imagedata = [
-    "assets/images/imageone.png",
-    "assets/images/imagethree.png",
-    "assets/images/imagetwo.png",
-  ];
-  List<String> imagedataone = [
-    "assets/images/treeimage.png",
-    "assets/images/fellimage.png",
-    "assets/images/reposibleimage.png",
-  ];
-  List<String> textdata = [
-    "Catherine",
-    "Malcolm",
-    "Laura Rosell",
-  ];
-  List<String> numberdata = [
-    "2",
-    "14",
-    "9",
-  ];
-  List<String> datedata = [
-    "2019-03-12",
-    "2019-03-12",
-    "2019-03-12",
-  ];
+  Map data = {
+    "data": [
+      {
+        "data1": "assets/images/imageone.png",
+        "data2": "assets/images/fellimage.png",
+        "data3": "Catherine",
+        "data4": "2",
+        "data5": "2019-03-12",
+        "data6": "When I ordered this book I did not\nrealize the author wasJanne linghurst,\nbut I soon realized it was her. ",
+        "data7": "The Hidden Life of Trees",
+        "data8": "Jane llinghurst",
+      },
+      {
+        "data1": "assets/images/imagethree.png",
+        "data2": "assets/images/fellimage.png",
+        "data3": "Malcolm",
+        "data4": "14",
+        "data5": "2019-03-12",
+        "data6": "I liked the story,  It seems a recurring\ntheme that a child must die in most of\nher stories. ",
+        "data7": "And Then He Fell",
+        "data8": "Kate Hewitt",
+      },
+      {
+        "data1": "assets/images/imagetwo.png",
+        "data2": "assets/images/reposibleimage.png",
+        "data3": "Laura Rosell",
+        "data4": "9",
+        "data5": "2019-03-12",
+        "data6": "I bought this memoir based on the\nrecommendation from a friend. I felt like\nI was struggling with some things. ",
+        "data7": "Rethinking Possible: A Mem...",
+        "data8": "Rebecca Faye Smith Galli",
+      },
+    ],
+  };
+
   List<String> textdataone = [
     "When I ordered this book I did not\nrealize the author wasJanne linghurst,\nbut I soon realized it was her. ",
     "I liked the story,  It seems a recurring\ntheme that a child must die in most of\nher stories. ",
@@ -73,10 +83,11 @@ class _CommentScreenState extends State<CommentScreen> {
         top: true,
         bottom: true,
         child: ListView.builder(
-          itemCount: imagedata.length,
+          itemCount: data["data"].length,
           itemBuilder: (context, index) => ListTile(
-            // trailing: Image.asset("assets/images/hartimage.png"),
-            leading: Image.asset(imagedata[index]),
+            leading: Image.asset(
+              data["data"][index]["data1"],
+            ),
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -84,13 +95,13 @@ class _CommentScreenState extends State<CommentScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      textdata[index],
+                      data["data"][index]["data3"],
                       style: const TextStyle(color: Color(0xFF8E8E93)),
                     ),
                     Row(
                       children: [
                         Text(
-                          numberdata[index],
+                          data["data"][index]["data4"],
                           style: TextStyle(color: Color(0XFF8E8E93)),
                         ),
                         SizedBox(
@@ -102,7 +113,7 @@ class _CommentScreenState extends State<CommentScreen> {
                   ],
                 ),
                 Text(
-                  datedata[index],
+                  data["data"][index]["data5"],
                   style: const TextStyle(color: Color(0xFFC7C7CC)),
                 ),
                 SizedBox(
@@ -124,7 +135,9 @@ class _CommentScreenState extends State<CommentScreen> {
                     children: [
                       Padding(
                         padding: EdgeInsets.only(top: height / 65, left: width / 20),
-                        child: Image.asset(imagedataone[index]),
+                        child: Image.asset(
+                          data["data"][index]["data2"],
+                        ),
                       ),
                       SizedBox(
                         width: width / 35,
@@ -133,9 +146,12 @@ class _CommentScreenState extends State<CommentScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(textdatatwo[index]),
                           Text(
-                            textdatathree[index],
+                            data["data"][index]["data7"],
+                            style: TextStyle(fontSize: text * 15),
+                          ),
+                          Text(
+                            data["data"][index]["data8"],
                             style: const TextStyle(color: Color(0xFFC7C7CC)),
                           ),
                         ],

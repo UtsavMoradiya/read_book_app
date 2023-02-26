@@ -8,30 +8,35 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  List<String> data = [
-    "Account",
-    "My Bookshelf",
-    "Reading Record",
-    "My Cart",
-  ];
-  List<String> editdata = [
-    "Night Mood",
-    "History",
-    "Setting",
-    "Healp and feelback",
-  ];
-  List<String> imagedata = [
-    "assets/images/accountimage.png",
-    "assets/images/bookshelfimage.png",
-    "assets/images/note.png",
-    "assets/images/icon.png",
-  ];
-  List<String> icondata = [
-    "assets/images/nighticon.png",
-    "assets/images/historyicon.png",
-    "assets/images/settingicon.png",
-    "assets/images/helpicon.png",
-  ];
+  Map data = {
+    "data": [
+      {
+        "data1": "Account",
+        "data2": "Night Mood",
+        "data3": "assets/images/accountimage.png",
+        "data4": "assets/images/nighticon.png",
+      },
+      {
+        "data1": "My Bookshelf",
+        "data2": "History",
+        "data3": "assets/images/bookshelfimage.png",
+        "data4": "assets/images/historyicon.png",
+      },
+      {
+        "data1": "Reading Record",
+        "data2": "Setting",
+        "data3": "assets/images/note.png",
+        "data4": "assets/images/settingicon.png",
+      },
+      {
+        "data1": "My Cart",
+        "data2": "Healp and feelback",
+        "data3": "assets/images/icon.png",
+        "data4": "assets/images/helpicon.png",
+      },
+    ],
+  };
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -52,11 +57,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
           style: TextStyle(color: Colors.white),
         ),
         elevation: 0,
-        actions: const [
+        actions: [
           Icon(
             Icons.mail,
             color: Colors.white,
-          )
+          ),
+          SizedBox(
+            width: width / 25,
+          ),
         ],
       ),
       body: SafeArea(
@@ -171,13 +179,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    itemCount: imagedata.length,
+                    itemCount: data["data"].length,
                     itemBuilder: (context, index) => ElevatedButton(
                       style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white)),
                       onPressed: () {},
                       child: ListTile(
-                        leading: Image.asset(imagedata[index]),
-                        title: Text(data[index]),
+                        leading: Image.asset(
+                          data["data"][index]["data3"],
+                        ),
+                        title: Text(data["data"][index]["data1"]),
                         trailing: const Icon(Icons.navigate_next),
                       ),
                     ),
@@ -188,13 +198,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    itemCount: icondata.length,
+                    itemCount: data["data"].length,
                     itemBuilder: (context, index) => ElevatedButton(
                       style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.white)),
                       onPressed: () {},
                       child: ListTile(
-                        leading: Image.asset(icondata[index]),
-                        title: Text(editdata[index]),
+                        leading: Image.asset(
+                          data["data"][index]["data4"],
+                        ),
+                        title: Text(data["data"][index]["data2"]),
                         trailing: const Icon(Icons.navigate_next),
                       ),
                     ),

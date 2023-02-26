@@ -48,42 +48,6 @@ class _NotificationScreenState extends State<NotificationScreen> {
       },
     ],
   };
-  //
-  // List<String> icondata = [
-  //   "assets/images/notificationicon.png",
-  //   "assets/images/likeicon.png",
-  //   "assets/images/commenticon.png",
-  //   "assets/images/dollaricon.png",
-  //   "assets/images/dollaricon.png",
-  // ];
-  // List<String> icondataone = [
-  //   "assets/images/three.png",
-  //   "assets/images/nine.png",
-  //   "assets/images/seven.png",
-  //   "assets/images/seven.png",
-  //   "assets/images/eight.png",
-  // ];
-  // List<String> textdata = [
-  //   "System notification",
-  //   "Like",
-  //   "Comment",
-  //   "Promotions",
-  //   "Followers",
-  // ];
-  // List<String> textdataone = [
-  //   "Tienes un adudo pendiente por ...",
-  //   "Thomas Pageot like your comment",
-  //   "Oleg Milshtein replied your comment",
-  //   "Oleg Milshtein Replied your comment",
-  //   "Dann Petty start follow you",
-  // ];
-  // List<String> textdatatwo = [
-  //   "2019-03-24",
-  //   "2019-02-05",
-  //   "O2019-04-18",
-  //   "2018-10-25",
-  //   "2018-09-28",
-  // ];
 
   @override
   Widget build(BuildContext context) {
