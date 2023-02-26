@@ -1,59 +1,33 @@
 import 'package:flutter/material.dart';
 
-class CoupenUnused extends StatefulWidget {
-  const CoupenUnused({Key? key}) : super(key: key);
+class CoupenExpaired extends StatefulWidget {
+  const CoupenExpaired({Key? key}) : super(key: key);
 
   @override
-  State<CoupenUnused> createState() => _CoupenUnusedState();
+  State<CoupenExpaired> createState() => _CoupenExpairedState();
 }
 
-class _CoupenUnusedState extends State<CoupenUnused> {
-  List data = [
-    "30%",
-    "20%",
-    "35%",
-    "45%",
-    "20%",
-  ];
-  List data2 = ["Discount", "Discount", "Discount", "Discount", "Discount"];
-  List data3 = [
-    "assets/images/New.png",
-    "assets/images/New.png",
-    "assets/images/New.png",
-    "assets/images/New.png",
-    "assets/images/New.png",
-  ];
-
+class _CoupenExpairedState extends State<CoupenExpaired> {
   Map student = {
     "data3": [
       {
         "data1": "New Book",
         "data2": "30% discount on new books",
         "data3": "Vailid until: 2019-05-04",
+        "data4": "30%",
+        "data5": "Discount",
+        "data6": "assets/images/Invalid.png",
       },
       {
         "data1": "New Book",
         "data2": "30% discount on new books",
         "data3": "Vailid until: 2019-05-04",
-      },
-      {
-        "data1": "New Book",
-        "data2": "30% discount on new books",
-        "data3": "Vailid until: 2019-05-04",
-      },
-      {
-        "data1": "New Book",
-        "data2": "30% discount on new books",
-        "data3": "Vailid until: 2019-05-04",
-      },
-      {
-        "data1": "New Book",
-        "data2": "30% discount on new books",
-        "data3": "Vailid until: 2019-05-04",
+        "data4": "20%",
+        "data5": "Discount",
+        "data6": "assets/images/Invalid.png",
       },
     ],
   };
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -81,12 +55,12 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                           "assets/images/back.png",
                         ),
                         SizedBox(
-                          width: width / 5,
+                          width: width / 3,
                         ),
-                        const Text(
+                        Text(
                           "Coupen",
                           style: TextStyle(
-                            fontSize: 17,
+                            fontSize: 18,
                             // fontFamily: 'Roboto',
                           ),
                         ),
@@ -100,13 +74,13 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                     height: height / 25,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.all(Radius.circular(10)),
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
                         border: Border.all(
-                          color: const Color(0xff2EBBC3),
+                          color: Color(0xff2EBBC3),
                         )),
-                    child: const TabBar(
+                    child: TabBar(
                       indicator: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        // borderRadius: BorderRadius.all(Radius.circular(5)),
                         color: Color(0xff2EBBC3),
                       ),
                       tabs: [
@@ -122,18 +96,19 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                       ],
                     ),
                   ),
+                  SizedBox(height: 10),
                   Expanded(
                     child: ListView.builder(
-                      itemCount: data.length,
+                      itemCount: student["data3"].length,
                       shrinkWrap: true,
                       itemBuilder: (context, index) => Container(
-                        margin: const EdgeInsets.all(15),
+                        margin: EdgeInsets.all(15),
                         height: height / 8,
                         width: width / 10,
                         decoration: BoxDecoration(
                           border: Border.all(
                             width: 1,
-                            color: const Color(0xff2EBBC3),
+                            color: Color(0xffC9C9C9),
                           ),
                           color: Colors.white,
                         ),
@@ -142,21 +117,21 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                             Container(
                               height: height / 8,
                               width: width / 3,
-                              color: const Color(0xff2EBBC3),
+                              color: Color(0xffC9C9C9),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text("${data[index]}",
+                                  Text(student["data3"][index]["data4"],
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontSize: text * 30)),
-                                  Text("${data2[index]}",
-                                      style: const TextStyle(color: Colors.white)),
+                                  Text(student["data3"][index]["data5"],
+                                      style: TextStyle(color: Colors.white)),
                                 ],
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 10),
+                              padding: EdgeInsets.only(left: 10),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment:
@@ -164,14 +139,14 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                                 children: [
                                   Text(
                                     student["data3"][index]["data1"],
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       color: Colors.black,
                                     ),
                                   ),
                                   Text(
                                     student["data3"][index]["data2"],
                                     style: TextStyle(
-                                        color: const Color(0xff8E8E93),
+                                        color: Color(0xff8E8E93),
                                         fontSize: text * 12),
                                   ),
                                   Text(
@@ -187,7 +162,7 @@ class _CoupenUnusedState extends State<CoupenUnused> {
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Image.asset(
-                                  "${data3[index]}",
+                                  student["data3"][index]["data6"],
                                   scale: 1.1,
                                 ),
                               ],
