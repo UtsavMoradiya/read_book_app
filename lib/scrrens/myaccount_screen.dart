@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:read_book_app/scrrens/transaction_record.dart';
 
 class MyaccountScreen extends StatefulWidget {
   const MyaccountScreen({Key? key}) : super(key: key);
@@ -68,11 +69,13 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                       children: [
                         Text(
                           "Balance",
-                          style: TextStyle(color: Colors.white, fontSize: text * 13),
+                          style: TextStyle(
+                              color: Colors.white, fontSize: text * 13),
                         ),
                         Text(
                           "65.00＄",
-                          style: TextStyle(color: Colors.white, fontSize: text * 40),
+                          style: TextStyle(
+                              color: Colors.white, fontSize: text * 40),
                         ),
                         SizedBox(
                           height: height / 20,
@@ -158,10 +161,19 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                   SizedBox(
                     width: width / 2.6,
                   ),
-                  const Text(
-                    "view all",
-                    style: TextStyle(
-                      color: Color(0XFFC7C7CC),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TransactionRecord(),
+                          ));
+                    },
+                    child: const Text(
+                      "view all",
+                      style: TextStyle(
+                        color: Color(0XFFC7C7CC),
+                      ),
                     ),
                   ),
                   const Icon(
@@ -189,7 +201,9 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                         Text(
                           dollardata[index],
                           style: TextStyle(
-                            color: index == 2 ? const Color(0xFF2EBBC3) : const Color(0xFFFF6D73),
+                            color: index == 2
+                                ? const Color(0xFF2EBBC3)
+                                : const Color(0xFFFF6D73),
                           ),
                         ),
                         const Icon(

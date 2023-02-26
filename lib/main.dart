@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:read_book_app/scrrens/myaccount_screen.dart';
 import 'package:read_book_app/scrrens/transaction_record.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const TransactionRecord(),
+      home: MyaccountScreen(),
     );
   }
 }
