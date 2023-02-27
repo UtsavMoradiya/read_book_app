@@ -105,30 +105,35 @@ class _FollowerScreenState extends State<FollowerScreen> {
                 trailing: GestureDetector(
                   onTap: () {
                     setState(() {
-                      data["data"][index]["data3"] = !data["data"][index]["data3"];
+                      data["data"][index]["data3"] =
+                          !data["data"][index]["data3"];
                     });
                   },
                   child: Container(
                     height: height / 32,
                     width: width / 5.5,
                     decoration: BoxDecoration(
-                      color: data["data"][index]["data3"] ? Colors.grey.shade300 : const Color(0xFF2EBBC3),
+                      color: data["data"][index]["data3"]
+                          ? Colors.grey.shade300
+                          : const Color(0xFF2EBBC3),
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Center(
-                        child: data["data"][index]["data3"]
-                            ? const Text(
-                                "unfollow",
-                                style: TextStyle(color: Colors.grey),
-                              )
-                            : const Text(
-                                "folllow",
-                                style: TextStyle(color: Colors.white),
-                              )),
+                      child: data["data"][index]["data3"]
+                          ? const Text(
+                              "unfollow",
+                              style: TextStyle(color: Colors.grey),
+                            )
+                          : const Text(
+                              "folllow",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                    ),
                   ),
                 ),
               ),
-              separatorBuilder: (context, index) => SizedBox(height: height / 30),
+              separatorBuilder: (context, index) =>
+                  SizedBox(height: height / 30),
             ),
           )
         ],

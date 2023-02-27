@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:read_book_app/comment_screen.dart';
+import 'package:read_book_app/scrrens/artical_page_screen.dart';
 import 'package:read_book_app/scrrens/myaccount_screen.dart';
+import 'package:read_book_app/scrrens/profile_screen.dart';
 import 'package:read_book_app/scrrens/transaction_record.dart';
+import 'package:read_book_app/scrrens/user_profile_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyaccountScreen(),
+      home: const ArticalPageScreen(),
     );
   }
 }
