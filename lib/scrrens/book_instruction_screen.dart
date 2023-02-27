@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:read_book_app/scrrens/user_profile_screen.dart';
 
 class BookInstructionScreen extends StatefulWidget {
   const BookInstructionScreen({Key? key}) : super(key: key);
@@ -400,9 +401,19 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                       SizedBox(
                         height: height / 80,
                       ),
-                      Text(
-                        textDataOne[index],
-                        style: const TextStyle(color: Colors.black),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => UserProfileScreen(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          textDataOne[index],
+                          style: const TextStyle(color: Colors.black),
+                        ),
                       ),
                     ],
                   ),

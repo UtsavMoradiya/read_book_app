@@ -66,9 +66,14 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
       appBar: AppBar(
         backgroundColor: const Color(0XFF2EBBC3),
         elevation: 0,
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Colors.white,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
         ),
         centerTitle: true,
         title: const Text("My Account"),
@@ -94,13 +99,11 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                       children: [
                         Text(
                           "Balance",
-                          style: TextStyle(
-                              color: Colors.white, fontSize: text * 13),
+                          style: TextStyle(color: Colors.white, fontSize: text * 13),
                         ),
                         Text(
                           "65.00＄",
-                          style: TextStyle(
-                              color: Colors.white, fontSize: text * 40),
+                          style: TextStyle(color: Colors.white, fontSize: text * 40),
                         ),
                         SizedBox(
                           height: height / 20,
@@ -214,7 +217,7 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                   title: Text(data["data"][index]["data1"]),
                   subtitle: Text(data["data"][index]["data2"]),
                   trailing: Container(
-                    width: width / 3.8,
+                    width: width / 3.7,
                     height: 50,
                     alignment: Alignment.centerRight,
                     child: Row(
@@ -222,9 +225,7 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                         Text(
                           data["data"][index]["data2"],
                           style: TextStyle(
-                            color: index == 2
-                                ? const Color(0xFF2EBBC3)
-                                : const Color(0xFFFF6D73),
+                            color: index == 2 ? const Color(0xFF2EBBC3) : const Color(0xFFFF6D73),
                           ),
                         ),
                         const Icon(

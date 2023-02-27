@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:read_book_app/scrrens/edit_profile_svreen.dart';
+import 'package:read_book_app/scrrens/home_screen.dart';
+import 'package:read_book_app/scrrens/myaccount_screen.dart';
+import 'package:read_book_app/scrrens/mybookself_screen.dart';
+import 'package:read_book_app/scrrens/notification_screen.dart';
+import 'package:read_book_app/scrrens/readingrecord_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -47,9 +53,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF2EBBC3),
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Colors.white,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomeScreen(),
+              ),
+            );
+          },
+          child: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
         ),
         centerTitle: true,
         title: const Text(
@@ -58,9 +74,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
         elevation: 0,
         actions: [
-          Icon(
-            Icons.mail,
-            color: Colors.white,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => NotificationScreen(),
+                ),
+              );
+            },
+            child: Icon(
+              Icons.mail,
+              color: Colors.white,
+            ),
           ),
           SizedBox(
             width: width / 25,
@@ -108,18 +134,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               SizedBox(
                                 width: width / 10,
                               ),
-                              Container(
-                                height: height / 25,
-                                width: width / 4.5,
-                                decoration: BoxDecoration(
-                                  // color: Color(0xFF2EBBC3),
-                                  borderRadius: BorderRadius.circular(15),
-                                  border: Border.all(color: const Color(0xFF2EBBC3)),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    "Edit",
-                                    style: TextStyle(color: const Color(0xFF2EBBC3), fontSize: text * 20),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => EditProfileScreen(),
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  height: height / 25,
+                                  width: width / 4.5,
+                                  decoration: BoxDecoration(
+                                    // color: Color(0xFF2EBBC3),
+                                    borderRadius: BorderRadius.circular(15),
+                                    border: Border.all(color: const Color(0xFF2EBBC3)),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "Edit",
+                                      style: TextStyle(color: const Color(0xFF2EBBC3), fontSize: text * 20),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -188,11 +224,37 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           data["data"][index]["data3"],
                         ),
                         title: Text(data["data"][index]["data1"]),
-                        trailing: const Icon(Icons.navigate_next),
+                        trailing: GestureDetector(
+                          onTap: () {
+                            if (index == 0) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const MyaccountScreen(),
+                                ),
+                              );
+                            } else if (index == 1) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const MyBookSelfScreen(),
+                                ),
+                              );
+                            } else if (index == 2) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const ReadindRecordScreen(),
+                                ),
+                              );
+                            }
+                          },
+                          child: const Icon(Icons.navigate_next_outlined, color: Colors.black),
+                        ),
                       ),
                     ),
                   ),
-                  const Divider(
+                  Divider(
                     thickness: 1,
                   ),
                   ListView.builder(

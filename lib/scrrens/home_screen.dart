@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:read_book_app/scrrens/book_instruction_screen.dart';
+import 'package:read_book_app/scrrens/profile_screen.dart';
+import 'package:read_book_app/scrrens/reading_screen.dart';
+import 'package:read_book_app/scrrens/search_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -25,17 +29,28 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 SizedBox(height: height / 40),
-                TextField(
-                  decoration: InputDecoration(
-                    prefixIcon: const Icon(Icons.search),
-                    suffixIcon: const Icon(Icons.mic),
-                    hintText: "search",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SearchScreen(),
+                      ),
+                    );
+                  },
+                  child: TextField(
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.search),
+                      suffixIcon: const Icon(Icons.mic),
+                      hintText: "search",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      enabled: false,
+                      filled: true,
+                      fillColor: Colors.grey.shade300,
+                      contentPadding: const EdgeInsets.symmetric(vertical: 5),
                     ),
-                    filled: true,
-                    fillColor: Colors.grey.shade300,
-                    contentPadding: const EdgeInsets.symmetric(vertical: 5),
                   ),
                 ),
                 SizedBox(
@@ -46,14 +61,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     const Text(
                       "Reading",
-                      style:
-                          TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
                       width: width / 2.1,
                     ),
-                    const Text(
-                      "View all",
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ReadingScreen(),
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        "View all",
+                      ),
                     ),
                     const Icon(
                       Icons.arrow_forward_ios_rounded,
@@ -72,7 +96,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       // mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Image.asset("assets/images/mask0.png"),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BookInstructionScreen(),
+                              ),
+                            );
+                          },
+                          child: Image.asset("assets/images/mask0.png"),
+                        ),
                         SizedBox(
                           height: height / 60,
                         ),
@@ -150,8 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     const Text(
                       "Bookshelf",
-                      style:
-                          TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
                       width: width / 2.4,
@@ -341,7 +374,17 @@ class _HomeScreenState extends State<HomeScreen> {
               Image.asset("assets/images/groud.png", color: Colors.blue),
               Image.asset("assets/images/path.png"),
               Image.asset("assets/images/category.png"),
-              Image.asset("assets/images/Profilesone.png"),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProfileScreen(),
+                    ),
+                  );
+                },
+                child: Image.asset("assets/images/Profilesone.png"),
+              ),
             ],
           ),
         ),

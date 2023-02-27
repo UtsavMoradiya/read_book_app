@@ -67,9 +67,14 @@ class _MyBookSelfScreenState extends State<MyBookSelfScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Colors.black,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
         ),
         actions: [Image.asset("assets/images/Show-List.png")],
         centerTitle: true,

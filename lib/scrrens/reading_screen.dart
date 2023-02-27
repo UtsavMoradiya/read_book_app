@@ -65,9 +65,14 @@ class _ReadingScreenState extends State<ReadingScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Colors.black,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
         ),
         centerTitle: true,
         title: const Text(
@@ -143,8 +148,7 @@ class _ReadingScreenState extends State<ReadingScreen> {
                                 SizedBox(width: width / 50),
                                 Text(
                                   data["data"][index]["data5"],
-                                  style:
-                                      const TextStyle(color: Color(0xFFC7C7CC)),
+                                  style: const TextStyle(color: Color(0xFFC7C7CC)),
                                 ),
                                 SizedBox(width: width / 8),
                                 Image.asset(
@@ -153,8 +157,7 @@ class _ReadingScreenState extends State<ReadingScreen> {
                                 SizedBox(width: width / 50),
                                 Text(
                                   data["data"][index]["data8"],
-                                  style:
-                                      const TextStyle(color: Color(0xFFC7C7CC)),
+                                  style: const TextStyle(color: Color(0xFFC7C7CC)),
                                 ),
                               ],
                             ),
