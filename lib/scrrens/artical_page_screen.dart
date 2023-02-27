@@ -34,7 +34,8 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
           ],
         ),
         title: const Center(
-          child: Text("The pieces we kee...", style: TextStyle(color: Colors.black, fontSize: 18)),
+          child: Text("The pieces we kee...",
+              style: TextStyle(color: Colors.black, fontSize: 18)),
         ),
         elevation: 0,
         actions: [
@@ -52,8 +53,7 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
                 },
                 child: GestureDetector(
                   onTap: () {
-                    showModdole();
-                    containerS();
+                    showModle();
                   },
                   child: const Icon(
                     Icons.ios_share_outlined,
@@ -158,18 +158,23 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
     );
   }
 
-  showModdole() {
+  showModle() {
     showModalBottomSheet(
       context: context,
       builder: (context) {
         return Container(
-          height: 160,
+          height: 600,
           width: double.infinity,
           child: Column(
             children: [
-              const SizedBox(
-                height: 15,
+              Image.asset("assets/images/Mask Group 174.png"),
+              const SizedBox(height: 10),
+              const Padding(
+                padding: EdgeInsets.only(right: 20, left: 20),
+                child: Text(
+                    "you want anything else?” the man in a floral-print shirt hollered from the coffee stand. “Andrea?” “Just the vanilla latte,” a woman replied from a nearby table, then resumed chatting on"),
               ),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -212,14 +217,6 @@ class _ArticalPageScreenState extends State<ArticalPageScreen> {
           ),
         );
       },
-    );
-  }
-
-  containerS() {
-    Container(
-      height: 100,
-      width: 100,
-      color: Colors.black,
     );
   }
 }
