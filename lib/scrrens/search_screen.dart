@@ -311,6 +311,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 child: GestureDetector(
                   onTap: () {
                     showModalBottomSheet(
+                      isDismissible: false,
                       context: context,
                       builder: (context) {
                         return Container(
@@ -324,7 +325,12 @@ class _SearchScreenState extends State<SearchScreen> {
                                   SizedBox(width: width / 2.8),
                                   const Text("I am listening...", style: TextStyle(color: Colors.black, fontSize: 16)),
                                   SizedBox(width: width / 3.5),
-                                  const Icon(Icons.close),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: const Icon(Icons.close),
+                                  ),
                                 ],
                               ),
                               SizedBox(height: height / 60),
