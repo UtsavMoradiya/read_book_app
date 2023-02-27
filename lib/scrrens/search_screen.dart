@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 // import 'package:flutter_sound/flutter_sound.dart';
 // import 'package:permission_handler/permission_handler.dart';
 
@@ -68,8 +69,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   Container(
                     width: width / 1.5,
                     height: height / 20,
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
                     child: TextField(
                       decoration: InputDecoration(
                         prefixIcon: const Icon(Icons.search),
@@ -306,12 +306,24 @@ class _SearchScreenState extends State<SearchScreen> {
               //     return Text("${duration.inSeconds}");
               //   },
               // ),
+              SizedBox(height: height / 7),
               Center(
-                child: ElevatedButton(
-                  onPressed: () async {},
-                  child: const Icon(
-                    Icons.mic,
-                  ),
+                child: GestureDetector(
+                  onTap: () {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) {
+                        return Container(
+                          height: 250,
+                          width: double.infinity,
+                          child: Column(
+                            children: [],
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: Image.asset("assets/images/voice.png"),
                 ),
               ),
             ],

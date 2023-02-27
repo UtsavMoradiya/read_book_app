@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:read_book_app/scrrens/myaccount_screen.dart';
-import 'package:read_book_app/scrrens/transaction_record.dart';
+import 'package:read_book_app/scrrens/artical_page_screen.dart';
+import 'package:read_book_app/scrrens/coupen_unused.dart';
+import 'package:read_book_app/scrrens/follower_screen.dart';
+import 'package:read_book_app/scrrens/my_cart_screen.dart';
+import 'package:read_book_app/scrrens/mybookself_screen.dart';
+import 'package:read_book_app/scrrens/notification_screen.dart';
+import 'package:read_book_app/scrrens/payment_screen.dart';
+import 'package:read_book_app/scrrens/reading_edit_screen.dart';
+import 'package:read_book_app/scrrens/reading_screen.dart';
+import 'package:read_book_app/scrrens/readingrecord_screen.dart';
+import 'package:read_book_app/scrrens/search_screen.dart';
+import 'package:read_book_app/scrrens/user_profile_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyaccountScreen(),
+      home: const SearchScreen(),
     );
   }
 }

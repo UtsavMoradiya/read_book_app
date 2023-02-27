@@ -16,7 +16,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
         "data3": "03-05  08:57",
         "data4": "First, this book has done for me what I wanted it to do: it’s helping me get rid of junk.",
         "data5": "assets/images/mask1.png",
-        "data6": "The Life-Changing Magic of...",
+        "data6": "The Life-Changing",
         "data7": "Marie Kondō",
       },
       {
@@ -28,7 +28,6 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
         "data6": "An Orphan’s War",
         "data7": "Molly Green",
       },
-
     ],
   };
 
@@ -108,15 +107,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                 children: [
                                   Text(
                                     "Danny Rice",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: text * 22),
+                                    style: TextStyle(color: Colors.black, fontSize: text * 22),
                                   ),
                                   Text(
                                     "ID:67589634",
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: text * 15),
+                                    style: TextStyle(color: Colors.grey, fontSize: text * 15),
                                   ),
                                 ],
                               ),
@@ -135,8 +130,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                   decoration: BoxDecoration(
                                     // color: Color(0xFF2EBBC3),
                                     borderRadius: BorderRadius.circular(15),
-                                    border: Border.all(
-                                        color: const Color(0xFF2EBBC3)),
+                                    border: Border.all(color: const Color(0xFF2EBBC3)),
                                   ),
                                   child: Center(
                                     child: follow
@@ -170,15 +164,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                 children: [
                                   Text(
                                     "568",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: text * 22),
+                                    style: TextStyle(color: Colors.black, fontSize: text * 22),
                                   ),
                                   Text(
                                     "Comments",
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: text * 15),
+                                    style: TextStyle(color: Colors.grey, fontSize: text * 15),
                                   ),
                                 ],
                               ),
@@ -186,15 +176,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                 children: [
                                   Text(
                                     "243",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: text * 22),
+                                    style: TextStyle(color: Colors.black, fontSize: text * 22),
                                   ),
                                   Text(
                                     "Following",
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: text * 15),
+                                    style: TextStyle(color: Colors.grey, fontSize: text * 15),
                                   ),
                                 ],
                               ),
@@ -202,15 +188,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                 children: [
                                   Text(
                                     "45K",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: text * 22),
+                                    style: TextStyle(color: Colors.black, fontSize: text * 22),
                                   ),
                                   Text(
                                     "Follower",
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: text * 15),
+                                    style: TextStyle(color: Colors.grey, fontSize: text * 15),
                                   ),
                                 ],
                               ),
@@ -226,8 +208,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                   Positioned(
                     left: width / 6.5,
                     top: height / 20,
-                    child:
-                        Image.asset("assets/images/dannyrise.png", scale: 0.8),
+                    child: Image.asset("assets/images/dannyrise.png", scale: 0.8),
                   ),
                 ],
               ),
@@ -242,22 +223,17 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text("Reading Record",
-                            style: TextStyle(fontSize: 20)),
-                        const Text("View All >",
-                            style: TextStyle(color: Colors.grey)),
+                        const Text("Reading Record", style: TextStyle(fontSize: 20)),
+                        const Text("View All >", style: TextStyle(color: Colors.grey)),
                       ],
                     ),
                     SizedBox(height: height / 30),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Image.asset("assets/images/myjobbookimage.png",
-                            scale: 2),
-                        Image.asset("assets/images/goodmanbookimage.png",
-                            scale: 2),
-                        Image.asset("assets/images/motherlikemanbookimage.png",
-                            scale: 2),
+                        Image.asset("assets/images/myjobbookimage.png", scale: 2),
+                        Image.asset("assets/images/goodmanbookimage.png", scale: 2),
+                        Image.asset("assets/images/motherlikemanbookimage.png", scale: 2),
                         Image.asset("assets/images/marry campisi.png"),
                         Image.asset("assets/images/orphan.png"),
                       ],
@@ -266,17 +242,19 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                     const Divider(
                       thickness: 1,
                     ),
-
                     SizedBox(height: height / 60),
-                    Text("Comments",style: TextStyle(fontSize: 18,color: Colors.grey)),
+                    const Text("Comments", style: TextStyle(fontSize: 18, color: Colors.grey)),
                     SizedBox(height: height / 30),
                     Container(
                       height: 400,
-                      child: ListView.builder(
+                      child: ListView.separated(
+                        physics: NeverScrollableScrollPhysics(),
                         itemCount: 2,
                         itemBuilder: (context, index) => ListTile(
                           // trailing: Image.asset("assets/images/hartimage.png"),
-                          leading: Image.asset(data["data"][index]["data1"],),
+                          leading: Image.asset(
+                            data["imageData"][index]["data1"],
+                          ),
                           title: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -284,7 +262,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    data["data"][index]["data2"],
+                                    data["imageData"][index]["data2"],
                                     style: const TextStyle(color: Color(0xFF8E8E93)),
                                   ),
                                   Row(
@@ -294,18 +272,19 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                         width: width / 32,
                                       ),
                                       Text(
-                                        data["data"][index]["data3"],
-                                        style: TextStyle(color: Color(0XFF8E8E93)),
+                                        data["imageData"][index]["data3"],
+                                        style: const TextStyle(color: Color(0XFF8E8E93)),
                                       ),
                                     ],
                                   )
                                 ],
                               ),
-
                               SizedBox(
                                 height: height / 83,
                               ),
-                              Text(data["data"][index]["data4"],),
+                              Text(
+                                data["imageData"][index]["data4"],
+                              ),
                               SizedBox(
                                 height: height / 40,
                               ),
@@ -321,7 +300,9 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsets.only(top: height / 65, left: width / 20),
-                                      child: Image.asset(data["data"][index]["data5"],),
+                                      child: Image.asset(
+                                        data["imageData"][index]["data5"],
+                                      ),
                                     ),
                                     SizedBox(
                                       width: width / 35,
@@ -330,9 +311,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        Text(data["data"][index]["data6"],),
                                         Text(
-                                          data["data"][index]["data7"],
+                                          data["imageData"][index]["data6"],
+                                        ),
+                                        Text(
+                                          data["imageData"][index]["data7"],
                                           style: const TextStyle(color: Color(0xFFC7C7CC)),
                                         ),
                                       ],
@@ -346,6 +329,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                             ],
                           ),
                         ),
+                        separatorBuilder: (context, index) => const Divider(),
                       ),
                     ),
                   ],

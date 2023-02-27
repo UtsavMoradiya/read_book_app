@@ -125,6 +125,7 @@ class _ReadingEditScreenState extends State<ReadingEditScreen> {
                     children: [
                       Checkbox(
                         checkColor: const Color(0xFFFFFFFF),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                         fillColor: MaterialStateProperty.resolveWith(
                           (states) => getColor(states),
                         ),
@@ -168,8 +169,7 @@ class _ReadingEditScreenState extends State<ReadingEditScreen> {
                                 SizedBox(width: width / 50),
                                 Text(
                                   data["data"][index]["data5"],
-                                  style:
-                                      const TextStyle(color: Color(0xFFC7C7CC)),
+                                  style: const TextStyle(color: Color(0xFFC7C7CC)),
                                 ),
                                 SizedBox(width: width / 8),
                                 Image.asset(
@@ -178,8 +178,7 @@ class _ReadingEditScreenState extends State<ReadingEditScreen> {
                                 SizedBox(width: width / 50),
                                 Text(
                                   data["data"][index]["data8"],
-                                  style:
-                                      const TextStyle(color: Color(0xFFC7C7CC)),
+                                  style: const TextStyle(color: Color(0xFFC7C7CC)),
                                 ),
                               ],
                             ),

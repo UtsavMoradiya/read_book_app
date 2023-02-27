@@ -100,6 +100,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                     children: [
                       Checkbox(
                         checkColor: const Color(0xFFFFFFFF),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                         fillColor: MaterialStateProperty.resolveWith(
                           (states) => getColor(states),
                         ),

@@ -8,6 +8,55 @@ class MyBookSelfScreen extends StatefulWidget {
 }
 
 class _MyBookSelfScreenState extends State<MyBookSelfScreen> {
+  Map data = {
+    "data": [
+      {
+        "data1": "assets/images/theorphan.png",
+        "data2": "The Orphan...",
+        "data3": "Shirley Dickson",
+      },
+      {
+        "data1": "assets/images/mask4.png",
+        "data2": "Daughters...",
+        "data3": "Lizzie Page ",
+      },
+      {
+        "data1": "assets/images/mask5.png",
+        "data2": "The Runaw...",
+        "data3": "Sandy Taylor",
+      },
+      {
+        "data1": "assets/images/germanmid.png",
+        "data2": "The Germa...",
+        "data3": "Mandy Robot",
+      },
+      {
+        "data1": "assets/images/nockedup.png",
+        "data2": "nocked-Up...",
+        "data3": "Hammerle",
+      },
+      {
+        "data1": "assets/images/gardeners.png",
+        "data2": "We Are the...",
+        "data3": "Joanna Gaines",
+      },
+      {
+        "data1": "assets/images/maybeyou.png",
+        "data2": "Maybe You...",
+        "data3": "Lori Gottlieb",
+      },
+      {
+        "data1": "assets/images/soortestway.png",
+        "data2": "Shortest W...",
+        "data3": "Pete Buttigieg",
+      },
+      {
+        "data1": "assets/images/fivefit.png",
+        "data2": "Five Feet...",
+        "data3": "Lippincott",
+      },
+    ],
+  };
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -32,7 +81,36 @@ class _MyBookSelfScreenState extends State<MyBookSelfScreen> {
           ),
         ),
       ),
-      // body: ,
+      body: Padding(
+        padding: EdgeInsets.only(left: width / 20),
+        child: Column(
+          children: [
+            Expanded(
+              child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 150,
+                    childAspectRatio: 0.68,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 20,
+                  ),
+                  itemCount: data["data"].length,
+                  itemBuilder: (BuildContext ctx, index) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(data["data"][index]["data1"]),
+                        Text(data["data"][index]["data2"]),
+                        Text(
+                          data["data"][index]["data3"],
+                          style: TextStyle(color: Colors.grey, fontSize: text * 12),
+                        ),
+                      ],
+                    );
+                  }),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
