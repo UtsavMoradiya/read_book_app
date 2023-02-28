@@ -98,19 +98,32 @@ class _MyCartScreenState extends State<MyCartScreen> {
                   width: double.infinity,
                   child: Row(
                     children: [
-                      Checkbox(
-                        checkColor: const Color(0xFFFFFFFF),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                        fillColor: MaterialStateProperty.resolveWith(
-                          (states) => getColor(states),
+                      Container(
+                        height: 25,
+                        width: 25,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(
+                            color: Color(0xFF8E8E93),
+                          ),
                         ),
-                        value: data["data"][index]["data9"],
-                        onChanged: (bool? value) {
-                          setState(() {
-                            data["data"][index]["data9"] = value!;
-                          });
-                        },
                       ),
+                      SizedBox(
+                        width: width / 30,
+                      ),
+                      // Checkbox(
+                      //   checkColor: const Color(0xFFFFFFFF),
+                      //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                      //   fillColor: MaterialStateProperty.resolveWith(
+                      //     (states) => getColor(states),
+                      //   ),
+                      //   value: data["data"][index]["data9"],
+                      //   onChanged: (bool? value) {
+                      //     setState(() {
+                      //       data["data"][index]["data9"] = value!;
+                      //     });
+                      //   },
+                      // ),
                       Image.asset(
                         data["data"][index]["data1"],
                         height: height / 5,
@@ -150,8 +163,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
               child: Button(
                 text: "Checkout",
               ),

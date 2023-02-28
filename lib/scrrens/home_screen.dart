@@ -38,18 +38,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     );
                   },
-                  child: TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: const Icon(Icons.search),
-                      suffixIcon: const Icon(Icons.mic),
-                      hintText: "search",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
+                  child: Container(
+                    height: height / 20,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        prefixIcon: const Icon(Icons.search),
+                        suffixIcon: const Icon(Icons.mic),
+                        hintText: "search",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        enabled: false,
+                        filled: true,
+                        fillColor: Colors.grey.shade300,
+                        contentPadding: const EdgeInsets.symmetric(vertical: 5),
                       ),
-                      enabled: false,
-                      filled: true,
-                      fillColor: Colors.grey.shade300,
-                      contentPadding: const EdgeInsets.symmetric(vertical: 5),
                     ),
                   ),
                 ),
@@ -77,6 +80,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                       child: const Text(
                         "View all",
+                        style: TextStyle(
+                          color: Color(0xFF8E8E93),
+                        ),
                       ),
                     ),
                     const Icon(
@@ -191,6 +197,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     const Text(
                       "View all",
+                      style: TextStyle(
+                        color: Color(0xFF8E8E93),
+                      ),
                     ),
                     const Icon(
                       Icons.arrow_forward_ios_rounded,
