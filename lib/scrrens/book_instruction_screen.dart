@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:read_book_app/scrrens/user_profile_screen.dart';
+import 'package:read_book_app/scrrens/write_a_comment_screen.dart';
 
 class BookInstructionScreen extends StatefulWidget {
   const BookInstructionScreen({Key? key}) : super(key: key);
@@ -153,8 +154,11 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                             height: height / 15,
                             width: width / 1.1,
                             alignment: Alignment.center,
-                            decoration: BoxDecoration(color: const Color(0xFFF0F2F1), borderRadius: BorderRadius.circular(10)),
-                            child: const Text("Cancel", style: TextStyle(fontSize: 20)),
+                            decoration: BoxDecoration(
+                                color: const Color(0xFFF0F2F1),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: const Text("Cancel",
+                                style: TextStyle(fontSize: 20)),
                           ),
                         ),
                       ],
@@ -178,17 +182,20 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                 SizedBox(
                   height: height / 20,
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    prefixIcon: const Icon(Icons.search),
-                    suffixIcon: const Icon(Icons.mic),
-                    hintText: "search",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
+                Container(
+                  height: height / 20,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.search),
+                      suffixIcon: const Icon(Icons.mic),
+                      hintText: "search",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      filled: true,
+                      fillColor: Colors.grey.shade300,
+                      contentPadding: const EdgeInsets.symmetric(vertical: 5),
                     ),
-                    filled: true,
-                    fillColor: Colors.grey.shade300,
-                    contentPadding: const EdgeInsets.symmetric(vertical: 5),
                   ),
                 ),
                 SizedBox(
@@ -196,7 +203,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                 ),
                 Row(
                   children: [
-                    Image.asset("assets/images/book.png", scale: 2.2),
+                    Image.asset("assets/images/mask8.png", scale: 2.2),
                     SizedBox(width: width / 20),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -205,8 +212,18 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                         // SizedBox(
                         //   height: height / 80,
                         // ),
-                        Text("The pieces we keep", style: TextStyle(fontSize: 18)),
-                        Text("Mary Alice ", style: TextStyle(color: Colors.grey, fontSize: 16)),
+                        Text(
+                          "The pieces we keep",
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "Mary Alice ",
+                          style: TextStyle(
+                              color: Color(0xFFC7C7CC),
+                              fontSize: 16,
+                              height: 1.5),
+                        ),
                       ],
                     ),
                   ],
@@ -221,6 +238,9 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                   itemBuilder: (context, index) => ListTile(
                     trailing: Text(
                       textDataFour[index],
+                      style: const TextStyle(
+                        color: Color(0xFFC7C7CC),
+                      ),
                     ),
                     leading: Text(
                       textDataThree[index],
@@ -252,7 +272,8 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                     children: [
                       const Text("The pieces we keep"),
                       const SizedBox(height: 8),
-                      Text("By Mary Alice ", style: TextStyle(color: Colors.grey.shade400)),
+                      Text("By Mary Alice ",
+                          style: TextStyle(color: Colors.grey.shade400)),
                       SizedBox(
                         height: height / 85,
                       ),
@@ -270,7 +291,8 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                             ),
                             child: Text(
                               "Historical Fiction",
-                              style: TextStyle(fontSize: 8, color: Colors.grey.shade600),
+                              style: TextStyle(
+                                  fontSize: 8, color: Colors.grey.shade600),
                             ),
                           ),
                           SizedBox(width: width / 20),
@@ -286,7 +308,8 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                             ),
                             child: Text(
                               "Sisters",
-                              style: TextStyle(fontSize: 8, color: Colors.grey.shade600),
+                              style: TextStyle(
+                                  fontSize: 8, color: Colors.grey.shade600),
                             ),
                           ),
                         ],
@@ -330,7 +353,8 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text("Catalog：The 235 chapter", style: TextStyle(fontSize: 16)),
+                  const Text("Catalog：The 235 chapter",
+                      style: TextStyle(fontSize: 16)),
                   GestureDetector(
                     onTap: () {
                       scaffoldKey.currentState!.openEndDrawer();
@@ -360,16 +384,21 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
               SizedBox(height: height / 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
+                children:  [
+                  const Text(
                     "Comments",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  Text(
-                    "write a comment",
-                    style: TextStyle(
-                      fontSize: 13,
-                      color: Color(0xFF2EBBC3),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder:  (context) => const WriteACommentScreen(),),);
+                    },
+                    child: const Text(
+                      "write a comment",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color(0xFF2EBBC3),
+                      ),
                     ),
                   ),
                 ],
@@ -459,20 +488,23 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                         height: 500,
                         color: Colors.white,
                         child: Padding(
-                          padding: EdgeInsets.only(left: width / 22, right: width / 22),
+                          padding: EdgeInsets.only(
+                              left: width / 22, right: width / 22),
                           child: Column(
                             children: [
                               SizedBox(height: height / 50),
                               Row(
                                 children: [
                                   SizedBox(width: width / 2.8),
-                                  const Text("Payment", style: TextStyle(fontSize: 20)),
+                                  const Text("Payment",
+                                      style: TextStyle(fontSize: 20)),
                                   SizedBox(width: width / 3.6),
                                   GestureDetector(
                                     onTap: () {
                                       Navigator.pop(context);
                                     },
-                                    child: const Icon(Icons.close, color: Colors.grey),
+                                    child: const Icon(Icons.close,
+                                        color: Colors.grey),
                                   ),
                                 ],
                               ),
@@ -485,23 +517,31 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                               Container(
                                 height: height / 10,
                                 width: double.infinity,
-                                decoration: BoxDecoration(color: Colors.grey.shade200, borderRadius: BorderRadius.circular(15)),
+                                decoration: BoxDecoration(
+                                    color: Colors.grey.shade200,
+                                    borderRadius: BorderRadius.circular(15)),
                                 child: Row(
                                   children: [
                                     SizedBox(width: width / 20),
-                                    Image.asset("assets/images/mask8.png", scale: 2.2),
+                                    Image.asset("assets/images/mask8.png",
+                                        scale: 2.2),
                                     SizedBox(width: width / 20),
                                     Column(
                                       // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         // SizedBox(
                                         //   height: height / 80,
                                         // ),
                                         SizedBox(height: height / 45),
-                                        Text("The pieces we keep", style: TextStyle(fontSize: 18)),
-                                        SizedBox(height: 8),
-                                        Text("Mary Alice ", style: TextStyle(color: Colors.grey, fontSize: 16)),
+                                        const Text("The pieces we keep",
+                                            style: TextStyle(fontSize: 18)),
+                                        const SizedBox(height: 8),
+                                        const Text("Mary Alice ",
+                                            style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 16)),
                                       ],
                                     ),
                                   ],
@@ -510,7 +550,8 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                               SizedBox(
                                 height: height / 30,
                               ),
-                              const Text("Sub Total", style: TextStyle(color: Colors.grey)),
+                              const Text("Sub Total",
+                                  style: TextStyle(color: Colors.grey)),
                               SizedBox(
                                 height: height / 80,
                               ),
@@ -518,8 +559,18 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                                 text: TextSpan(
                                   style: DefaultTextStyle.of(context).style,
                                   children: const <TextSpan>[
-                                    TextSpan(text: '7.50', style: TextStyle(color: Color(0xFF2EBBC3), fontSize: 35, fontWeight: FontWeight.bold)),
-                                    TextSpan(text: '\$', style: TextStyle(color: Color(0xFF2EBBC3), fontSize: 15, fontWeight: FontWeight.bold)),
+                                    TextSpan(
+                                        text: '7.50',
+                                        style: TextStyle(
+                                            color: Color(0xFF2EBBC3),
+                                            fontSize: 35,
+                                            fontWeight: FontWeight.bold)),
+                                    TextSpan(
+                                        text: '\$',
+                                        style: TextStyle(
+                                            color: Color(0xFF2EBBC3),
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold)),
                                   ],
                                 ),
                               ),
@@ -532,7 +583,10 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   SizedBox(height: height / 20),
-                                  const Text("Discount", style: TextStyle(color: Color(0xFF8E8E93), fontSize: 18)),
+                                  const Text("Discount",
+                                      style: TextStyle(
+                                          color: Color(0xFF8E8E93),
+                                          fontSize: 18)),
                                   SizedBox(width: width / 1.6),
                                   const Text("40%"),
                                 ],
@@ -541,7 +595,10 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   SizedBox(height: height / 20),
-                                  const Text("actual payment", style: TextStyle(color: Color(0xFF8E8E93), fontSize: 18)),
+                                  const Text("actual payment",
+                                      style: TextStyle(
+                                          color: Color(0xFF8E8E93),
+                                          fontSize: 18)),
                                   SizedBox(width: width / 2.2),
                                   const Text("＄4.50%",
                                       style: TextStyle(
@@ -559,7 +616,9 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                                 height: height / 15,
                                 width: width / 1.1,
                                 alignment: Alignment.center,
-                                decoration: BoxDecoration(color: const Color(0xFF2EBBC3), borderRadius: BorderRadius.circular(10)),
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFF2EBBC3),
+                                    borderRadius: BorderRadius.circular(10)),
                                 child: const Text(
                                   "Submit",
                                   style: TextStyle(

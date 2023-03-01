@@ -19,9 +19,14 @@ class _WriteACommentScreenState extends State<WriteACommentScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFFFFFFF),
-        leading: Icon(
-          Icons.arrow_back_sharp,
-          color: Colors.grey.shade800,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.arrow_back_sharp,
+            color: Colors.grey.shade800,
+          ),
         ),
         title: const Center(
             child: Text("Write a comment",

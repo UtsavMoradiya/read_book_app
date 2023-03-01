@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:read_book_app/scrrens/search_screen.dart';
 
 class FollowerScreen extends StatefulWidget {
   const FollowerScreen({Key? key}) : super(key: key);
@@ -58,9 +59,14 @@ class _FollowerScreenState extends State<FollowerScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Colors.black,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
         ),
         centerTitle: true,
         title: const Text(
@@ -75,21 +81,27 @@ class _FollowerScreenState extends State<FollowerScreen> {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-            child: Container(
-              height: height / 18,
-              child: TextField(
-                decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.search),
-                  suffixIcon: const Icon(Icons.mic),
-                  hintText: "search",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SearchScreen(),),);
+              },
+              child: SizedBox(
+                height: height / 20,
+                child: TextField(
+                  enabled: false,
+                  decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.search),
+                    suffixIcon: const Icon(Icons.mic),
+                    hintText: "search",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
 
-                  // borderRadius: BorderRadius.circular(15),
-                  filled: true,
-                  fillColor: Colors.grey.shade300,
-                  // contentPadding: const EdgeInsets.symmetric(vertical: 5),
+                    // borderRadius: BorderRadius.circular(15),
+                    filled: true,
+                    fillColor: Colors.grey.shade300,
+                    // contentPadding: const EdgeInsets.symmetric(vertical: 5),
+                  ),
                 ),
               ),
             ),
