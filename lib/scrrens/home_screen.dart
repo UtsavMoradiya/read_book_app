@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:read_book_app/scrrens/book_instruction_screen.dart';
 import 'package:read_book_app/scrrens/profile_screen.dart';
 import 'package:read_book_app/scrrens/reading_screen.dart';
 import 'package:read_book_app/scrrens/search_screen.dart';
+
+import 'book_instruction_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -10,6 +11,9 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
+
+State<HomeScreen> createState() => _HomeScreenState();
+
 
 class _HomeScreenState extends State<HomeScreen> {
   @override

@@ -15,28 +15,28 @@ class _MyCartScreenState extends State<MyCartScreen> {
       {
         "data1": "assets/images/orpathentrain.png",
         "data2": "Orphan Train Trials",
-        "data4": "/-＄7.50",
+        "data4": "\＄7.50",
         "data3": "By Rachel Wesson ",
         "data9": false,
       },
       {
         "data1": "assets/images/Daughters of War.png",
         "data2": "Daughters of War",
-        "data4": "/-＄6.00",
+        "data4": "\＄6.00",
         "data3": "By Lizzie Page ",
         "data9": false,
       },
       {
         "data1": "assets/images/amotherlike.png",
         "data2": "A Mother Like Mine ",
-        "data4": "/-＄5.50",
+        "data4": "\＄5.50",
         "data3": "By Kate Hewitt ",
         "data9": false,
       },
       {
         "data1": "assets/images/marrychampis.png",
         "data2": "A Family Affair",
-        "data4": "＄4.00",
+        "data4": "\＄4.00",
         "data3": "By Mary Campisi ",
         "data9": false,
       },
@@ -98,32 +98,32 @@ class _MyCartScreenState extends State<MyCartScreen> {
                   width: double.infinity,
                   child: Row(
                     children: [
-                      Container(
-                        height: 25,
-                        width: 25,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          border: Border.all(
-                            color: Color(0xFF8E8E93),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: width / 30,
-                      ),
-                      // Checkbox(
-                      //   checkColor: const Color(0xFFFFFFFF),
-                      //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                      //   fillColor: MaterialStateProperty.resolveWith(
-                      //     (states) => getColor(states),
+                      // Container(
+                      //   height: 25,
+                      //   width: 25,
+                      //   decoration: BoxDecoration(
+                      //     borderRadius: BorderRadius.circular(15),
+                      //     border: Border.all(
+                      //       color: Color(0xFF8E8E93),
+                      //     ),
                       //   ),
-                      //   value: data["data"][index]["data9"],
-                      //   onChanged: (bool? value) {
-                      //     setState(() {
-                      //       data["data"][index]["data9"] = value!;
-                      //     });
-                      //   },
                       // ),
+                      // SizedBox(
+                      //   width: width / 30,
+                      // ),
+                      Checkbox(
+                        checkColor: const Color(0xFFFFFFFF),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                        fillColor: MaterialStateProperty.resolveWith(
+                          (states) => getColor(states),
+                        ),
+                        value: data["data"][index]["data9"],
+                        onChanged: (bool? value) {
+                          setState(() {
+                            data["data"][index]["data9"] = value!;
+                          });
+                        },
+                      ),
                       Image.asset(
                         data["data"][index]["data1"],
                         height: height / 5,
