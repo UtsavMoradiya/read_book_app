@@ -179,7 +179,7 @@ class _BookInstructionScreenState extends State<BookInstructionScreen> {
                 SizedBox(
                   height: height / 20,
                 ),
-                Container(
+                 Container(
                   height: height / 20,
                   child: TextField(
                     decoration: InputDecoration(
