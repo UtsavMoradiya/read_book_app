@@ -107,7 +107,7 @@ class _MyBookSelfScreenState extends State<MyBookSelfScreen> {
                         Text(data["data"][index]["data2"]),
                         Text(
                           data["data"][index]["data3"],
-                          style: TextStyle(color: Colors.grey, fontSize: text * 12),
+                          style: TextStyle(color: Colors.grey, fontSize: text * 12.5),
                         ),
                       ],
                     );

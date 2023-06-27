@@ -68,7 +68,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 SizedBox(height: height / 30),
                 Row(
                   children: [
-                    Container(
+                    SizedBox(
                       width: width / 1.5,
                       height: height / 20,
                       // decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
@@ -82,8 +82,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           ),
                           filled: true,
                           fillColor: Colors.grey.shade300,
-                          contentPadding:
-                              const EdgeInsets.symmetric(vertical: 5),
+                          contentPadding: const EdgeInsets.symmetric(vertical: 5),
                         ),
                       ),
                     ),
@@ -318,7 +317,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         isDismissible: false,
                         context: context,
                         builder: (context) {
-                          return Container(
+                          return SizedBox(
                             height: 250,
                             width: double.infinity,
                             child: Column(
@@ -327,9 +326,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                 Row(
                                   children: [
                                     SizedBox(width: width / 2.8),
-                                    const Text("I am listening...",
-                                        style: TextStyle(
-                                            color: Colors.black, fontSize: 16)),
+                                    const Text("I am listening...", style: TextStyle(color: Colors.black, fontSize: 16)),
                                     SizedBox(width: width / 3.5),
                                     GestureDetector(
                                       onTap: () {
@@ -340,10 +337,10 @@ class _SearchScreenState extends State<SearchScreen> {
                                   ],
                                 ),
                                 SizedBox(height: height / 60),
-                                const Divider(
-                                  indent: 20,
-                                  endIndent: 20,
-                                ),
+                                // const Divider(
+                                //   indent: 20,
+                                //   endIndent: 20,
+                                // ),
                                 SizedBox(height: height / 20),
                                 Image.asset("assets/images/symbol.png"),
                               ],

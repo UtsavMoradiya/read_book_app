@@ -83,7 +83,12 @@ class _FollowerScreenState extends State<FollowerScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
             child: GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SearchScreen(),),);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SearchScreen(),
+                  ),
+                );
               },
               child: SizedBox(
                 height: height / 20,
@@ -94,9 +99,9 @@ class _FollowerScreenState extends State<FollowerScreen> {
                     suffixIcon: const Icon(Icons.mic),
                     hintText: "search",
                     border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
                       borderRadius: BorderRadius.circular(15),
                     ),
-
                     // borderRadius: BorderRadius.circular(15),
                     filled: true,
                     fillColor: Colors.grey.shade300,
@@ -117,17 +122,14 @@ class _FollowerScreenState extends State<FollowerScreen> {
                 trailing: GestureDetector(
                   onTap: () {
                     setState(() {
-                      data["data"][index]["data3"] =
-                          !data["data"][index]["data3"];
+                      data["data"][index]["data3"] = !data["data"][index]["data3"];
                     });
                   },
                   child: Container(
                     height: height / 32,
                     width: width / 5.5,
                     decoration: BoxDecoration(
-                      color: data["data"][index]["data3"]
-                          ? Colors.grey.shade300
-                          : const Color(0xFF2EBBC3),
+                      color: data["data"][index]["data3"] ? Colors.grey.shade300 : const Color(0xFF2EBBC3),
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Center(
@@ -144,8 +146,7 @@ class _FollowerScreenState extends State<FollowerScreen> {
                   ),
                 ),
               ),
-              separatorBuilder: (context, index) =>
-                  SizedBox(height: height / 30),
+              separatorBuilder: (context, index) => SizedBox(height: height / 30),
             ),
           )
         ],
