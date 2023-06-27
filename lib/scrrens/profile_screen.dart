@@ -42,7 +42,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       },
     ],
   };
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -191,15 +190,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             children: [
                               Text(
                                 "Comments",
-                                style: TextStyle(color: const Color(0xFF8E8E93), fontSize: text * 20, fontWeight: FontWeight.w300),
+                                style: TextStyle(
+                                  color: const Color(0xFF8E8E93),
+                                  fontSize: text * 20,
+                                  fontWeight: FontWeight.w300,
+                                ),
                               ),
                               Text(
                                 "Following",
-                                style: TextStyle(color: const Color(0xFF8E8E93), fontSize: text * 20, fontWeight: FontWeight.w300),
+                                style: TextStyle(
+                                  color: const Color(0xFF8E8E93),
+                                  fontSize: text * 20,
+                                  fontWeight: FontWeight.w300,
+                                ),
                               ),
                               Text(
                                 "Followers",
-                                style: TextStyle(color: const Color(0xFF8E8E93), fontSize: text * 20, fontWeight: FontWeight.w300),
+                                style: TextStyle(
+                                  color: const Color(0xFF8E8E93),
+                                  fontSize: text * 20,
+                                  fontWeight: FontWeight.w300,
+                                ),
                               ),
                             ],
                           ),
