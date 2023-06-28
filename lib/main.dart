@@ -9,6 +9,7 @@ import 'package:read_book_app/scrrens/my_cart_screen.dart';
 import 'package:read_book_app/scrrens/mybookself_screen.dart';
 import 'package:read_book_app/scrrens/notification_screen.dart';
 import 'package:read_book_app/scrrens/payment_screen.dart';
+import 'package:read_book_app/scrrens/paysuccessfulscreen.dart';
 import 'package:read_book_app/scrrens/profile_screen.dart';
 import 'package:read_book_app/scrrens/reading_edit_screen.dart';
 import 'package:read_book_app/scrrens/reading_screen.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FollowerScreen(),
+      home: PaySuccessfullScreen(),
     );
   }
 }
